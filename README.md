@@ -52,6 +52,8 @@ Nakon što korisnik u sistemu naruci neki proizvod, moguca je dostava na kucnu ad
 
 Nakon izvršene narudžbe proizvoda, moguce je i poništavanje narudžbe sve dok dostavljac ne zabilježi da je izvršio dostavu proizvoda.
 
+---
+
 ## **Funkcionalnosti**
 
 * Unos, ažuriranje i brisanje proizvoda
@@ -64,11 +66,7 @@ Nakon izvršene narudžbe proizvoda, moguce je i poništavanje narudžbe sve dok dos
 
 ## **Akteri**
 
-* Mušterija
-- Osoba koja popunjava narudžbe i narucuje proizvode. Mora imati account i broj racuna i taj novac koristi za placanje narucenih proizvoda. Mušterija može poništiti narudžbu sve dok dostavljac ne izvrši dostavu. Ima mogucnost da mu se dostavi lijek ili da ga on sam preuzme. Ima mogucnost ažuriranja vlastitih podataka.
-* Prodavac
-- Prodaje proizvode. Može ih prodavati ljudima s karticom (tj. mušterijama koje imaju accounte), a može i osobama bez accounta. Popust uz recept se može izvršiti samo kod prodavaca.
-* Menadžer
-- Ima mogucnost unosa, brisanja i ažuriranja proizvoda, radnika, te vrši unos korisnika u sistem.
-*Dostavljac
-Osoba koja prima proizvode koje treba dostaviti, sa svim potrebnim specifikacijama (tipa gdje treba dostaviti) te bilježi dostavljene proizvode.
+**Mušterija** - Osoba koja popunjava narudžbe i narucuje proizvode. Mora imati account i broj racuna i taj novac koristi za placanje narucenih proizvoda. Mušterija može poništiti narudžbu sve dok dostavljac ne izvrši dostavu. Ima mogucnost da mu se dostavi lijek ili da ga on sam preuzme. Ima mogucnost ažuriranja vlastitih podataka.
+**Prodavac** - Prodaje proizvode. Može ih prodavati ljudima s karticom (tj. mušterijama koje imaju accounte), a može i osobama bez accounta. Popust uz recept se može izvršiti samo kod prodavaca.
+**Menadžer** - Ima mogucnost unosa, brisanja i ažuriranja proizvoda, radnika, te vrši unos korisnika u sistem.
+**Dostavljac** - Osoba koja prima proizvode koje treba dostaviti, sa svim potrebnim specifikacijama (tipa gdje treba dostaviti) te bilježi dostavljene proizvode.
