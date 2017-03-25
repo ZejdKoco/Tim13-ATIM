@@ -10,7 +10,7 @@ Clanovi Tima:
 
 ## **Opis teme**
 
-Cilj projekta je napraviti sistem za apoteku koji ce omogucavati mušterijama da, pored klasicne kupovine lijekova kod prodavaca, mogu narucivati lijekove s racuna koji su otvorili u samoj apoteci. Ovo narucivanje se vrši online, te je moguca i sama dostava lijekova. Do ove potrebe je došlo nakon zakljucka da dosta osoba nerijetko koristi proizvode apoteke, te je namjera da se olakša interakcija mušterije (korisnika) i prodavaca. Takoder ovaj sistem ce olakšati mnogim osobama iz razloga što je moguca dostava na kucnu adresu. Sistem omogucava i unošenje, auriranje  i brisanje proizvoda, tako da je u svakom trenutku moguc uvid da li je neki lijek na stanju ili nije, te ako nije mogucnost da se naznaci potreba istog.
+Cilj projekta je napraviti sistem za apoteku koji Ä‡e omoguÄ‡avati muÅ¡terijama da, pored klasiÄne kupovine lijekova kod prodavaÄa, mogu naruÄivati lijekove s raÄuna koji su otvorili u samoj apoteci. Ovo naruÄivanje se vrÅ¡i online, te je moguÄ‡a i sama dostava lijekova. Do ove potrebe je doÅ¡lo nakon zakljuÄka da dosta osoba nerijetko koristi proizvode apoteke, te je namjera da se olakÅ¡a interakcija muÅ¡terije (korisnika) i prodavaÄa. TakoÄ‘er, ovaj sistem Ä‡e olakÅ¡ati mnogim osobama iz razloga Å¡to je moguÄ‡a dostava na kuÄ‡nu adresu. Sistem omoguÄ‡ava i unoÅ¡enje, aÅ¾uriranje  i brisanje proizvoda, tako da je u svakom trenutku moguÄ‡ uvid da li je neki lijek na stanju ili nije, te ako nije, moguÄ‡nost da se naznaÄi potreba istog.
 
 --- 
 
@@ -18,58 +18,60 @@ Cilj projekta je napraviti sistem za apoteku koji ce omogucavati mušterijama da,
 
 **Registracija korisnika**
 
-Osobe koje nemaju account i racun, registraciju mogu izvršiti popunjavanjem formulara s najvanijim podacima. Identifikacijski broj se dobija tek nakon što se izvrši uplata odredene svote novca na racun, u suprotnom nije moguce narucivanje proizvoda preko sistema. 
+Osobe koje nemaju account i raÄun, registraciju mogu izvrÅ¡iti popunjavanjem formulara s najvaÅ¾nijim podacima. Identifikacijski broj se dobija tek nakon Å¡to se izvrÅ¡i uplata odreÄ‘ene svote novca na raÄun, u suprotnom nije moguÄ‡e naruÄivanje proizvoda preko sistema. 
 
-**Prijava korisnika u sistem i airiranje**
+**Prijava korisnika u sistem i aÅ¾iriranje**
 
-Proces pocinje klikom na dugme prijava. Osobe koje imaju account se mogu logovati unoseci korisnicko ime i lozinku. Nakon što je korisnik pristupio sistemu, moe izvršiti auriranje nekih svojih podataka, kao npr. trenutnu adresu boravišta.
+Proces poÄinje klikom na dugme prijava. Osobe koje imaju account se mogu logovati unoseÄ‡i korisniÄko ime i lozinku. Nakon Å¡to je korisnik pristupio sistemu, moÅ¾e izvrÅ¡iti aÅ¾uriranje nekih svojih podataka, kao npr. trenutnu adresu boraviÅ¡ta.
 
-**Prijava prodavaca, menadera i dostavljaca u sistem**
+**Prijava prodavaÄa, menadÅ¾era i dostavljaÄa u sistem**
 
-Prijava istih se vrši samo unošenjem odredenog identifikacijskog broja, nakon cega se vrši provjera postojanja istog. Ukoliko postoji, otvara se jedna od tri moguce stranice, u zavisnosti od uloge koju osoba obavlja.
+Prijava istih se vrÅ¡i samo unoÅ¡enjem odredenog identifikacijskog broja, nakon Äega se vrÅ¡i provjera postojanja istog. Ukoliko postoji, otvara se jedna od tri moguÄ‡e stranice (forme), u zavisnosti od uloge koju osoba obavlja.
 
-**Narucivanje proizvoda**
+**NaruÄivanje proizvoda**
 
-Nakon uspješnog logovanja u sistem, korisnik ima mogucnost narucivanja artikla koji eli. Korisnik takoder ima mogucnost da vidi da li je artikal na stanju, te ukoliko jeste, moe naruciti isti. Nakon toga se vrši provjera da li mušterija na racunu ima dovoljnu svotu, te se obavještava ili da je proizvod uspiješno narucen ili da nema dovoljno novca. Ukoliko proizvod nije na stanju, moguce je zahtijevanje njegove nabavke.
+Nakon uspjeÅ¡nog logovanja u sistem, korisnik ima moguÄ‡nost naruÄivanja artikla koji Å¾eli. VrÅ¡e se provjere da li je proizvod na stanju i da li muÅ¡terija na raÄunu ima dovoljnu svotu, te se obavjeÅ¡tava ili da je proizvod uspijeÅ¡no naruÄen ili da nema dovoljno novca. 
 
 **Kupovina proizvoda**
 
-Postoji i standardni nacin kupovine proizvoda, na šalteru, gdje prodavac biljei koji je artikl prodan te vrši predaju istog. Nakon što se prodavac loguje u sistem ima mogucnost uvida koliko ima zaliha nekog proizvoda i obracunavanje popusta (uz recept).
+Postoji i standardni naÄin kupovine proizvoda, na Å¡alteru, gdje prodavaÄ biljeÅ¾i koji je artikl prodan te vrÅ¡i predaju istog. Nakon Å¡to se prodavaÄ loguje u sistem ima moguÄ‡nost uvida koliko ima zaliha nekog proizvoda i obraÄunavanje popusta (uz recept).
 
-**Dodavanje, auriranje i brisanje proizvoda**
+**Dodavanje, aÅ¾uriranje i brisanje proizvoda**
 
-Ove procese mogu izvršiti jedino osobe sa statusom menadera. Nakon izvršavanja nekog od ovih procesa, promjene ostaju trajno zabiljeene.
+Ove procese mogu izvrÅ¡iti jedino osobe sa statusom menadÅ¾era. Nakon izvrÅ¡avanja nekog od ovih procesa, promjene ostaju trajno zabiljeÅ¾ene.
 
-**Dodavanje, auriranje i brisanje uposlenika**
+**Dodavanje, aÅ¾uriranje i brisanje uposlenika**
 
-Ove procese, takoder, mogu izvršiti jedino osobe sa statusom menadera. Ukoliko se izvrši brisanje uposlenika, taj uposlenik više ne moe pristupiti sistemu s ulogom uposlenika.
+Ove procese, takoÄ‘er, mogu izvrÅ¡iti jedino osobe sa statusom menadÅ¾era. Ukoliko se izvrÅ¡i brisanje uposlenika, taj uposlenik viÅ¡e ne moÅ¾e pristupiti sistemu s ulogom uposlenika.
 
 **Dostava proizvoda**
 
-Nakon što korisnik u sistemu naruci neki proizvod, moguca je dostava na kucnu adresu. Dostavljac, pristupanjem svom sistemu, ima sve potrebne podatke (ime mušterije, naziv proizvoda, kolicina, adresa i sl.) za mogucnost uspješnog dostavljanja proizvoda.
+Nakon Å¡to korisnik u sistemu naruÄi neki proizvod, moguÄ‡a je dostava na kuÄ‡nu adresu. DostavljaÄ, pristupanjem svom sistemu, ima sve potrebne podatke (ime muÅ¡terije, naziv proizvoda, koliÄina, adresa i sl.) za moguÄ‡nost uspjeÅ¡nog dostavljanja proizvoda.
 
-**Poništavanje narudbe**
+**PoniÅ¡tavanje narudÅ¾be**
 
-Nakon izvršene narudbe proizvoda, moguce je i poništavanje narudbe sve dok dostavljac ne zabiljei da je izvršio dostavu proizvoda.
+Nakon izvrÅ¡ene narudÅ¾be proizvoda, moguÄ‡e je i poniÅ¡tavanje narudÅ¾be sve dok dostavljaÄ ne zabiljeÅ¾i da je izvrÅ¡io dostavu proizvoda.
 
 ---
 
 ## **Funkcionalnosti**
 
-* Unos, auriranje i brisanje proizvoda
-* Unos, auriranje i brisanje uposlenika
-* Unos i auriranje korisnika
-* Mogucnost dostave proizvoda
-* Mogucnost obracuna popusta uz recept
-* Mogucnost uvida u stanje robe
-* Mogucnost poništavanja narudbe
+* Unos, aÅ¾uriranje i brisanje proizvoda
+* Unos, aÅ¾uriranje i brisanje uposlenika
+* Unos i aÅ¾uriranje korisnika
+* MoguÄ‡nost dostave proizvoda
+* MoguÄ‡nost obraÄuna popusta uz recept
+* MoguÄ‡nost uvida u stanje robe
+* MoguÄ‡nost poniÅ¡tavanja narudÅ¾be
+
+---
 
 ## **Akteri**
 
-**Mušterija** - Osoba koja popunjava narudbe i narucuje proizvode. Mora imati account i broj racuna i taj novac koristi za placanje narucenih proizvoda. Mušterija moe poništiti narudbu sve dok dostavljac ne izvrši dostavu. Ima mogucnost da mu se dostavi lijek ili da ga on sam preuzme. Ima mogucnost auriranja vlastitih podataka.
+**MuÅ¡terija** - Osoba koja popunjava narudÅ¾be i naruÄuje proizvode. Mora imati account i broj raÄuna i taj novac koristi za plaÄanje naruÄenih proizvoda. MuÅ¡terija moÅ¾e poniÅ¡titi narudÅ¾bu sve dok dostavljaÄ ne izvrÅ¡i dostavu. Ima moguÄ‡nost da mu se dostavi lijek ili da ga on sam preuzme. Ima moguÄ‡nost aÅ¾uriranja vlastitih podataka.
 
-**Prodavac** - Prodaje proizvode. Moe ih prodavati ljudima s karticom (tj. mušterijama koje imaju accounte), a moe i osobama bez accounta. Popust uz recept se moe izvršiti samo kod prodavaca.
+**ProdavaÄ** - Prodaje proizvode. MoÅ¾e ih prodavati ljudima s karticom (tj. muÅ¡terijama koje imaju accounte), a moÅ¾e i osobama bez accounta. Popust uz recept se moÅ¾e izvrÅ¡iti samo kod prodavaÄa.
 
-**Menader** - Ima mogucnost unosa, brisanja i auriranja proizvoda, radnika, te vrši unos korisnika u sistem.
+**MenadÅ¾er** - Ima moguÄ‡nost unosa, brisanja i aÅ¾uriranja proizvoda, radnika, te vrÅ¡i unos korisnika u sistem.
 
-**Dostavljac** - Osoba koja prima proizvode koje treba dostaviti, sa svim potrebnim specifikacijama (tipa gdje treba dostaviti) te biljei dostavljene proizvode.
+**DostavljaÄ** - Osoba koja prima proizvode koje treba dostaviti, sa svim potrebnim specifikacijama (tipa gdje treba dostaviti) te biljeÅ¾i dostavljene proizvode.
