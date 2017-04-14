@@ -1,0 +1,30 @@
+PRINCIP POJEDINACNE ODGOVORNOSTI
+Ovaj princip kaze da svaka klasa treba imati pojedinacnu odgovornost, odnosno da se za svaki poseban posao veze i posebna klasa. Kod nas:
+LiveKupac: Kod njega se moze samo postaviti recept, tako da sigurno ima samo jednu odgovornost.
+OnlineKupac: On ima mogucnost da naruci proizvod i da ponisti narudzbu. Ove dvije metode su funkcionalnosti vezane za proizvod, te nema potrebe za mijenjanjem klase.
+Prodavac: Metode su vezane samo za prodaju proizvoda, tako da obavlja samo jednu funkcionalnost.
+Dostavljac- Ima jednu metodu, samim tim i jednu funkcionalnost.
+Menadzer- Njegove funkcionalnosti smo vec podijelili u interfejse, te samim tim osigurali zadovoljenje ovog principa.
+
+OTVORENO ZATVOREN PRINCIP
+Trebamo teziti pisanju koda koji ne treba biti mijenjan svaki put kada se zahtijeva promjena u sistemu. Dakle, otvoreno zatvoren princip se ogleda u tome da, kada dodamo novu funkcionalnost u sistem, promjene u kodu trebaju biti minimalne. Nase klase su tako kreirane da nema potrebe za modifikacijama. Dokaz tome su apstraktne klase i interfejsi koji se obicno koriste za zadovoljenje ovog principa. Kod apstraktnih klasa nasljedjivanje i polimorfnost su ti koji pomazu zadovoljenju principa.
+
+LISKOV PRINCIP ZAMJENE
+Ovaj princip kaze da ako je S podtip od T, onda S moze biti zamijenjen s objektom tipa T. U nasem slucaju, klase Kupac i Uposlenik su apstraktne, samim tim se javljaju minimalno 2 nasljedjivanja. Klase izvedene iz klase Kupac su LiveKupac i OnlineKupac i postju Liskov princip, obje su zamjenjive klasom Kupac. Takodjer i klase Prodavac, Menadzer i Dostavljac, koje nasljedjuju klasu Uposlenik, postuju Liskov princip.
+
+PRINCIP INVERZNE OVISNOSTI
+Princip inverzne ovisnosti kaze da ne treba ovisiti od konkretnih klasa. Bolje je ovisiti o apstrakcijama, kao sto su apstraktne klase i interfejsi nego o konkretnim klasama, jer se oni mnogo manje mijenjaju nego njihove konkretne izvedenice. U nasem slucaju, na dijagramu vidimo da nijedna strelica ne vodi u izvedenu klasu, sto zadovoljava ovaj princip. Takodjer, menadzer implementira vise interfejsa, posebno za svaku funkcionalnost. Tako, kada bismo dodali npr. novu vrstu uposlenika kojom bi trebao upravljati menadzer, ne bi bilo potrebe da se mijenja menadzer klasa, vec je samo potrebno dodati novi interfejs. Dakle, ovdje se kao apstrakcija koristi interfejs.
+
+PRINCIP IZOLIRANJA INTERFEJSA
+Ovaj princip kaze da klijenta ne treba "prisiliti" da implementira interfejs, odnosno metode koje ne koristi. Nije pozeljno "servirati" pred korisnika sve metode klasa. Umjesto jednog "debelog" interfejsa, treba napraviti vise manjih. Svaki od tih interfejsa sadrzi metode vezane za jednu, odredjenu funkcionalnost. Na dijagramu vidimo da nigdje nema "debelih" klasa. Sve klase implementiraju samo metode koje ce i koristiti i koje sluze za obavljanje zadatka zbog kojeg su i kreirane. I ovaj princip je, takodjer, zadovoljen.
+
+
+
+
+
+
+
+
+
+
+
