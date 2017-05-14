@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="ProjekatMEDICA.PretragaUposlenika"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatMEDICA"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="500" Height="500">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock HorizontalAlignment="Left" Margin="24,33,0,0" TextWrapping="Wrap" Text="Pretraga Uposlenika" VerticalAlignment="Top" FontSize="30"/>
+        <TextBox HorizontalAlignment="Left" Margin="193,117,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="256"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,117,0,0" TextWrapping="Wrap" Text="Ime, prezime ili ID" VerticalAlignment="Top" Height="32"/>
+        <Button x:Name="buttonPretrazi" Content="Trazi" HorizontalAlignment="Left" Margin="333,154,0,0" VerticalAlignment="Top" Width="116"/>
+        <ListView x:Name="listUposlenici" HorizontalAlignment="Left" Height="150" Margin="46,246,0,0" VerticalAlignment="Top" Width="403" BorderThickness="1" BorderBrush="Black"/>
+        <Button x:Name="buttonAzuriraj" Content="Azuriraj" HorizontalAlignment="Left" Margin="354,414,0,0" VerticalAlignment="Top" Width="95"/>
+        <Button x:Name="buttonNazad" Content="Nazad" HorizontalAlignment="Left" Margin="236,414,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.292,0.312" Width="89"/>
+
+    </Grid>
+
+</Page>

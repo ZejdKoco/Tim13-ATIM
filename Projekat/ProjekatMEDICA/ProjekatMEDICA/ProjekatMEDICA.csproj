@@ -99,6 +99,9 @@
     <Compile Include="AzuriranjeUposlenika.xaml.cs">
       <DependentUpon>AzuriranjeUposlenika.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BrisanjeKupca.xaml.cs">
+      <DependentUpon>BrisanjeKupca.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodavanjeUposlenika.xaml.cs">
       <DependentUpon>DodavanjeUposlenika.xaml</DependentUpon>
     </Compile>
@@ -107,6 +110,9 @@
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PretragaUposlenika.xaml.cs">
+      <DependentUpon>PretragaUposlenika.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -137,7 +143,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BrisanjeKupca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodavanjeUposlenika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PretragaUposlenika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
