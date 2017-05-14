@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="ProjekatMEDICA.DostavaProizvoda"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatMEDICA"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock HorizontalAlignment="Left" Margin="25,15,0,0" TextWrapping="Wrap" Text="Trenutni broj dostava" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="25,40,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="321,15,0,0" TextWrapping="Wrap" Text="Ime i prezime" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="446,15,0,0" TextWrapping="Wrap" Text="(odjavi se)" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="80" Margin="541,10,0,0" VerticalAlignment="Top" Width="80"/>
+        <ListView HorizontalAlignment="Left" Height="260" Margin="25,80,0,0" VerticalAlignment="Top" Width="184"/>
+        <TextBlock HorizontalAlignment="Left" Margin="230,90,0,0" TextWrapping="Wrap" Text="Ime kupca :" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="230,130,0,0" TextWrapping="Wrap" Text="Proizvodi :" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="230,165,0,0" TextWrapping="Wrap" Text="Kolicina :" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="321,210,0,0" VerticalAlignment="Top" Width="192"/>
+        <TextBlock HorizontalAlignment="Left" Margin="321,90,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="20" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="321,130,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="20" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="321,165,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="20" Width="120"/>
+
+    </Grid>
+</Page>

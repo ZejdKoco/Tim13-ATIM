@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="ProjekatMEDICA.MenadzerForm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatMEDICA"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="proizvod" HorizontalAlignment="Left" Margin="70,80,0,0" TextWrapping="Wrap" Text="Proizvod" VerticalAlignment="Top" Width="70" FlowDirection="RightToLeft"/>
+        <TextBlock x:Name="uposlenik" HorizontalAlignment="Left" Margin="70,160,0,0" TextWrapping="Wrap" Text="Uposlenik" VerticalAlignment="Top" Width="70" FlowDirection="RightToLeft"/>
+        <TextBlock x:Name="kupac" HorizontalAlignment="Left" Margin="70,240,0,0" TextWrapping="Wrap" Text="Kupac" VerticalAlignment="Top" Width="70" FlowDirection="RightToLeft"/>
+        <Button x:Name="buttonDodajProizvod" Content="Dodaj" HorizontalAlignment="Left" Margin="180,55,0,0" VerticalAlignment="Top" Height="70" Width="130"/>
+        <Button x:Name="buttonUposlenikDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="180,135,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button x:Name="buttonProizvodAzuriraj" Content="Ažuriraj" HorizontalAlignment="Left" Margin="320,55,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button Content="Ažuriraj" HorizontalAlignment="Left" Margin="320,135,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button x:Name="buttonProizvodBrisi" Content="Briši" HorizontalAlignment="Left" Margin="460,55,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button x:Name="buttonUposlenikBrisi" Content="Briši" HorizontalAlignment="Left" Margin="460,135,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button x:Name="buttonKupacDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="250,215,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button x:Name="buttonKupacBrisi" Content="Briši" HorizontalAlignment="Left" Margin="390,215,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+
+    </Grid>
+</Page>

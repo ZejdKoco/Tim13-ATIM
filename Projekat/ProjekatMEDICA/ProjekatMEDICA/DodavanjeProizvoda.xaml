@@ -8,11 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="labelNaziv" Margin="25,60,0,0" TextWrapping="Wrap" Text="Naziv :" VerticalAlignment="Top" RenderTransformOrigin="1.87,0.656" HorizontalAlignment="Left" FlowDirection="RightToLeft" Width="110"/>
-        <TextBlock x:Name="labelProizvodjac" HorizontalAlignment="Left" Margin="25,115,0,0" TextWrapping="Wrap" Text="Proizvođač :" VerticalAlignment="Top" Width="110" FlowDirection="RightToLeft"/>
-        <TextBlock x:Name="labelKolicina" HorizontalAlignment="Left" Margin="25,170,0,0" TextWrapping="Wrap" Text="Količina :" VerticalAlignment="Top" FlowDirection="RightToLeft" Width="110"/>
-        <TextBlock x:Name="labelSlika" HorizontalAlignment="Left" Margin="25,225,0,0" TextWrapping="Wrap" Text="Slika :" VerticalAlignment="Top" Width="110" FlowDirection="RightToLeft" />
-        <TextBlock x:Name="labelBarcode" HorizontalAlignment="Left" Margin="25,355,0,0" TextWrapping="Wrap" Text="Barcode :" VerticalAlignment="Top" Width="110" FlowDirection="RightToLeft"/>
+        <TextBlock x:Name="labelNaziv" Margin="25,60,0,0" TextWrapping="Wrap" Text="Naziv :" VerticalAlignment="Top" RenderTransformOrigin="1.87,0.656" HorizontalAlignment="Left" Width="110"/>
+        <TextBlock x:Name="labelProizvodjac" HorizontalAlignment="Left" Margin="25,115,0,0" TextWrapping="Wrap" Text="Proizvođač :" VerticalAlignment="Top" Width="110"/>
+        <TextBlock x:Name="labelKolicina" HorizontalAlignment="Left" Margin="25,170,0,0" TextWrapping="Wrap" Text="Količina :" VerticalAlignment="Top" Width="110"/>
+        <TextBlock x:Name="labelSlika" HorizontalAlignment="Left" Margin="25,225,0,0" TextWrapping="Wrap" Text="Slika :" VerticalAlignment="Top" Width="110" />
+        <TextBlock x:Name="labelBarcode" HorizontalAlignment="Left" Margin="25,355,0,0" TextWrapping="Wrap" Text="Barcode :" VerticalAlignment="Top" Width="110"/>
         <TextBlock x:Name="labelOpis" HorizontalAlignment="Left" Margin="25,480,0,0" TextWrapping="Wrap" Text="Komentar/Opis :" VerticalAlignment="Top"/>
         <TextBox x:Name="textboxNaziv" HorizontalAlignment="Left" Margin="150,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
         <TextBox x:Name="textboxProizvodjac" HorizontalAlignment="Left" Margin="150,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
