@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <TextBlock HorizontalAlignment="Left" Margin="24,33,0,0" TextWrapping="Wrap" Text="Brisanje Uposlenika" VerticalAlignment="Top" FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="24,33,0,0" TextWrapping="Wrap" Text="Brisanje Kupca" VerticalAlignment="Top" FontSize="30" SelectionChanged="TextBlock_SelectionChanged"/>
             <TextBox HorizontalAlignment="Left" Margin="193,117,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="256"/>
             <TextBlock HorizontalAlignment="Left" Margin="46,117,0,0" TextWrapping="Wrap" Text="Ime, prezime ili ID" VerticalAlignment="Top" Height="32"/>
             <Button x:Name="buttonPretrazi" Content="Trazi" HorizontalAlignment="Left" Margin="333,154,0,0" VerticalAlignment="Top" Width="116"/>

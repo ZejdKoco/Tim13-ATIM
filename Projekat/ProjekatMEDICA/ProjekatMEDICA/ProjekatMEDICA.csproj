@@ -102,6 +102,9 @@
     <Compile Include="BrisanjeKupca.xaml.cs">
       <DependentUpon>BrisanjeKupca.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BrisanjeUposlenika.xaml.cs">
+      <DependentUpon>BrisanjeUposlenika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodavanjeUposlenika.xaml.cs">
       <DependentUpon>DodavanjeUposlenika.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BrisanjeKupca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BrisanjeUposlenika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
