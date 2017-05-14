@@ -13,24 +13,27 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace ProjekatMEDICA
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class AzuriranjeUposlenika : Page
     {
-        public MainPage()
+        public AzuriranjeUposlenika()
         {
             this.InitializeComponent();
-            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void textBoxKomentar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AzuriranjeUposlenika));
+
+        }
+        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -96,6 +96,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AzuriranjeUposlenika.xaml.cs">
+      <DependentUpon>AzuriranjeUposlenika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DodavanjeUposlenika.xaml.cs">
+      <DependentUpon>DodavanjeUposlenika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FormOdabirUloge.xaml.cs">
       <DependentUpon>FormOdabirUloge.xaml</DependentUpon>
     </Compile>
@@ -127,6 +133,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AzuriranjeUposlenika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodavanjeUposlenika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StilZaButtons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

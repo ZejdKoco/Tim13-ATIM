@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="ProjekatMEDICA.DodavanjeUposlenika"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatMEDICA"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="730" Width="500">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock HorizontalAlignment="Left" Margin="21,23,0,0" TextWrapping="Wrap" Text="Dodavanje Uposlenika" VerticalAlignment="Top" FontSize="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,92,0,0" TextWrapping="Wrap" Text="Ime" VerticalAlignment="Top" Height="32"/>
+        <TextBox x:Name="textBoxIme" HorizontalAlignment="Left" Margin="159,92,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296"/>
+        <TextBox x:Name="textBoxPrezime" HorizontalAlignment="Left" Margin="159,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,157,0,0" TextWrapping="Wrap" Text="Prezime" VerticalAlignment="Top" Height="32"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,226,0,0" TextWrapping="Wrap" Text="Datum Rodjenja" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged" Height="30"/>
+        <DatePicker x:Name="datePickerDatum" HorizontalAlignment="Left" Margin="159,224,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,287,0,0" TextWrapping="Wrap" Text="JMBG" VerticalAlignment="Top" Height="32"/>
+        <TextBox x:Name="textBoxJMBG" HorizontalAlignment="Left" Margin="159,287,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" InputScope="Digits"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,353,0,0" TextWrapping="Wrap" Text="Strucna Sprema" VerticalAlignment="Top" Height="32"/>
+        <ComboBox x:Name="comboBoxStrucnaSprema" HorizontalAlignment="Left" Margin="159,353,0,0" VerticalAlignment="Top" Width="296">
+            <x:String>VSS</x:String>
+            <x:String>Osnovna Skola</x:String>
+            <x:String>Magistar</x:String>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="21,421,0,0" TextWrapping="Wrap" Text="Spol" VerticalAlignment="Top" Height="26"/>
+        <RadioButton x:Name="radioButtonMusko" Content="Musko" HorizontalAlignment="Left" Margin="159,415,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Zensko" Name="radioButtonZensko" HorizontalAlignment="Left" Margin="335,415,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,477,0,0" TextWrapping="Wrap" Text="Komentar" VerticalAlignment="Top" Height="32"/>
+        <TextBox x:Name="textBoxKomentar" HorizontalAlignment="Left" Margin="159,477,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="103" Width="296"/>
+        <Button x:Name="buttonNazad" Content="Nazad" HorizontalAlignment="Left" Margin="159,618,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="buttonUnesi" Content="Unesi" HorizontalAlignment="Left" Margin="335,618,0,0" VerticalAlignment="Top" Width="120"/>
+
+
+    </Grid>
+</Page>
