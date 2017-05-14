@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="ProjekatMEDICA.DodavanjeProizvoda"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatMEDICA"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="labelNaziv" Margin="25,60,0,0" TextWrapping="Wrap" Text="Naziv :" VerticalAlignment="Top" RenderTransformOrigin="1.87,0.656" HorizontalAlignment="Left" FlowDirection="RightToLeft" Width="110"/>
+        <TextBlock x:Name="labelProizvodjac" HorizontalAlignment="Left" Margin="25,115,0,0" TextWrapping="Wrap" Text="Proizvođač :" VerticalAlignment="Top" Width="110" FlowDirection="RightToLeft"/>
+        <TextBlock x:Name="labelKolicina" HorizontalAlignment="Left" Margin="25,170,0,0" TextWrapping="Wrap" Text="Količina :" VerticalAlignment="Top" FlowDirection="RightToLeft" Width="110"/>
+        <TextBlock x:Name="labelSlika" HorizontalAlignment="Left" Margin="25,225,0,0" TextWrapping="Wrap" Text="Slika :" VerticalAlignment="Top" Width="110" FlowDirection="RightToLeft" />
+        <TextBlock x:Name="labelBarcode" HorizontalAlignment="Left" Margin="25,355,0,0" TextWrapping="Wrap" Text="Barcode :" VerticalAlignment="Top" Width="110" FlowDirection="RightToLeft"/>
+        <TextBlock x:Name="labelOpis" HorizontalAlignment="Left" Margin="25,480,0,0" TextWrapping="Wrap" Text="Komentar/Opis :" VerticalAlignment="Top"/>
+        <TextBox x:Name="textboxNaziv" HorizontalAlignment="Left" Margin="150,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="textboxProizvodjac" HorizontalAlignment="Left" Margin="150,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="textboxKolicina" HorizontalAlignment="Left" Margin="150,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
+        <Image x:Name="slika" HorizontalAlignment="Left" Height="100" Margin="150,225,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="buttonSlika" Content="Ucitaj" HorizontalAlignment="Left" Margin="260,255,0,0" VerticalAlignment="Top" Padding="8,4"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="150,355,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="barcode" Content="Ucitaj" HorizontalAlignment="Left" Margin="260,385,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="150,480,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="170" Height="80"/>
+        <Button x:Name="buttonDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="120,585,0,0" VerticalAlignment="Top" Width="120"/>
+    
+    </Grid>
+</Page>
