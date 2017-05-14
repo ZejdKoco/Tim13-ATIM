@@ -25,6 +25,12 @@ namespace ProjekatMEDICA
         public MainPage()
         {
             this.InitializeComponent();
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //this.Frame.Navigate(typeof(BlankPage1)); samo proba za formu (ko hoce nek koristi da isproba formu)
         }
     }
 }
