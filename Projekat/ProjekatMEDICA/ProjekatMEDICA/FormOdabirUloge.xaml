@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="ProjekatMEDICA.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatMEDICA"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="500" Width="400">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="StilZaButtons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Image HorizontalAlignment="Left" Height="226" Margin="37,10,0,0" VerticalAlignment="Top" Width="329" Source="Assets/Square150x150Logo.png" Stretch="Fill"/>
+        <Button Name="buttonKupac"  Content="Kupac" HorizontalAlignment="Left" Margin="37,241,0,0" VerticalAlignment="Top" Height="81" Width="133" Style="{StaticResource buttonStilZaPocFormu}"/>
+        <Button Content="Menadzer" Name="buttonMenadzer" HorizontalAlignment="Left" Margin="239,241,0,0" VerticalAlignment="Top" Height="81" Width="133"/>
+        <Button Content="Prodavac" Name="buttonProdavac" HorizontalAlignment="Left" Margin="37,349,0,0" VerticalAlignment="Top" Height="81" Width="133"/>
+        <Button Content="Dostavljac" Name="buttonDostavljac" HorizontalAlignment="Left" Margin="239,349,0,0" VerticalAlignment="Top" Height="81" Width="133"/>
+    </Grid>
+</Page>
