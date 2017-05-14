@@ -96,6 +96,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AzurirajProizvodParent.xaml.cs">
+      <DependentUpon>AzurirajProizvodParent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AzuriranjeProizvodaChild.xaml.cs">
+      <DependentUpon>AzuriranjeProizvodaChild.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AzuriranjeUposlenika.xaml.cs">
       <DependentUpon>AzuriranjeUposlenika.xaml</DependentUpon>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="FormOdabirUloge.xaml.cs">
       <DependentUpon>FormOdabirUloge.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IzbrisiProizvod.xaml.cs">
+      <DependentUpon>IzbrisiProizvod.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -122,6 +131,9 @@
     </Compile>
     <Compile Include="PrijavaKupca.xaml.cs">
       <DependentUpon>PrijavaKupca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrijavaMenadzera.xaml.cs">
+      <DependentUpon>PrijavaMenadzera.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -145,6 +157,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AzurirajProizvodParent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AzuriranjeProizvodaChild.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AzuriranjeUposlenika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -165,11 +185,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="IzbrisiProizvod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PretragaUposlenika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrijavaKupca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrijavaMenadzera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

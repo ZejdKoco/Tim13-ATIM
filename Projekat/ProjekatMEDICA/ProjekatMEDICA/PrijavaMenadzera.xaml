@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="ProjekatMEDICA.PrijavaMenadzera"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatMEDICA"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <RelativePanel>
+            <TextBlock Name="Username" Text="Korisnicko ime:"
+                       FontSize="18" FontWeight="Normal"
+                       Margin="15,30,10,10"></TextBlock>
+            <TextBox Name="Korisnicko" MinWidth="200"
+                     RelativePanel.RightOf="Username"
+                     Margin="5,30,10,10"></TextBox>
+            <Button Name="Prijava" Content="Prijava"
+                    FontSize="18" FontWeight="Normal"
+                    Margin="280,100,20,10"></Button>
+        </RelativePanel>
+    </Grid>
+
+</Page>

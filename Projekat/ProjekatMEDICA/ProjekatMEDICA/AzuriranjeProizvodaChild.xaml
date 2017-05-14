@@ -1,0 +1,74 @@
+﻿<Page
+    x:Class="ProjekatMEDICA.AzuriranjeProizvodaChild"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatMEDICA"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="400" Height="500">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <RelativePanel>
+            <TextBlock Name="Naziv" Text="Naziv"  MinWidth="100"
+                   FontSize="18" FontWeight="Normal" Margin="10, 10, 5, 10"></TextBlock>
+            <TextBox  MinWidth="200" 
+                      RelativePanel.RightOf="Naziv"
+                      Margin="10, 10, 5, 10"></TextBox>
+            <TextBlock Name="Proizvodjac" Text="Proizvodjac" MinWidth="100"
+                       FontSize="18" FontWeight="Normal" 
+                       Margin="10, 70, 5, 10"
+                       ></TextBlock>
+            <TextBox  MinWidth="200" 
+                      RelativePanel.RightOf="Proizvodjac"
+                      Margin="10,70,5, 10"
+                      ></TextBox>
+            <TextBlock Name="Kolicina" Text="Kolicina" MinWidth="100"
+                       FontSize="18" FontWeight="Normal" 
+                       Margin="10, 140, 5, 10"
+                       ></TextBlock>
+            <TextBox  MinWidth="200" 
+                      RelativePanel.RightOf="Kolicina"
+                      Margin="10,140,5, 10"
+                      ></TextBox>
+
+            <TextBlock Name="Slika" Text="Slika:"
+                       FontSize="18" FontWeight="Normal"
+                       Margin="10, 210, 5, 10"></TextBlock>
+            <Image Name="Img" RelativePanel.RightOf="Slika"
+                   Height="70" Width="70"  
+                   Margin="70, 190, 5, 10"
+                   Source="Assets/LockScreenLogo.png"></Image>
+            <TextBlock Name="BarCode" Text="Barcode:"
+                       FontSize="18" FontWeight="Normal"
+                       Margin="10,280, 5, 10"></TextBlock>
+            <Image Name="Img1" Width="70" Height="70"
+                    RelativePanel.RightOf="BarCode"
+                    Margin="45, 270,5, 10" Source="Assets/LockScreenLogo.png"></Image>
+            <TextBlock Name="Komentar" Text="Komentar:"
+                       FontSize="18" FontWeight="Normal"
+                       Margin="10,350, 5, 10"></TextBlock>
+            <RichEditBox Name="Kom" 
+                         Margin="20, 350, 5, 10"
+                         RelativePanel.RightOf="Komentar"
+                         MinWidth="200"
+                         MinHeight="75"></RichEditBox>
+            <Button Name="Spremi" Content="Spremi"
+                    Margin="230,450, 20, 30"
+                    FontSize="18"
+                    FontWeight="Normal"
+                    Height="45"
+                    Width="85"></Button>
+        </RelativePanel>
+
+    </Grid>
+</Page>
