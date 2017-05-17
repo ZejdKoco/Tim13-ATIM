@@ -132,6 +132,7 @@
     <Compile Include="MenadzerForm.xaml.cs">
       <DependentUpon>MenadzerForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\DateConverter.cs" />
     <Compile Include="Models\Kupac.cs" />
     <Compile Include="Models\LiveKupac.cs" />
     <Compile Include="Models\OnlineKupac.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="UnosKorisnika.xaml.cs">
       <DependentUpon>UnosKorisnika.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\RegistracijaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -262,6 +264,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

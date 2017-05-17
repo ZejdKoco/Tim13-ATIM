@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,12 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class RegistracijaOnlineKupca : Page
     {
+        RegistracijaViewModel viewModel;
+        
         public RegistracijaOnlineKupca()
         {
             this.InitializeComponent();
         }
+        
     }
 }

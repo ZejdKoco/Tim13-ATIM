@@ -5,7 +5,14 @@
     xmlns:local="using:ProjekatMEDICA"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converter="using:ProjekatMEDICA.Models"
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <!--converter namespace definiran u Page-->
+        <converter:DateConverter x:Key="theDateConverter"/>
+    </Page.Resources>
+
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,5,0,-5" Width="360">
         <TextBlock x:Name="labelIme" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ime :" VerticalAlignment="Top" Margin="15,95,0,0" Width="110"/>
@@ -15,18 +22,16 @@
         <TextBlock HorizontalAlignment="Left" Margin="15,275,0,0" TextWrapping="Wrap" Text="Slika :" VerticalAlignment="Top" Width="110"/>
         <TextBlock HorizontalAlignment="Left" Margin="15,385,0,0" TextWrapping="Wrap" Text="Username :" VerticalAlignment="Top" Width="110"/>
         <TextBlock HorizontalAlignment="Left" Margin="15,430,0,0" TextWrapping="Wrap" Text="Password :" VerticalAlignment="Top" Width="110"/>
-        <TextBlock HorizontalAlignment="Left" Margin="15,475,0,0" TextWrapping="Wrap" Text="Password :" VerticalAlignment="Top" Width="109"/>
-        <TextBox x:Name="textIme" HorizontalAlignment="Left" Margin="145,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
-        <TextBox x:Name="textPrezime" HorizontalAlignment="Left" Margin="145,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
-        <TextBox x:Name="textDatum" HorizontalAlignment="Left" Margin="145,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
-        <TextBox HorizontalAlignment="Left" Margin="145,380,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
-        <TextBox HorizontalAlignment="Left" Margin="145,425,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
-        <TextBox HorizontalAlignment="Left" Margin="145,470,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="textIme" Text="{x:Bind viewModel.ime, Mode=TwoWay}"  HorizontalAlignment="Left" Margin="145,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="textPrezime"  Text="{x:Bind viewModel.prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="145,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBox HorizontalAlignment="Left" Text="{x:Bind viewModel.username, Mode=TwoWay}" Margin="145,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBox HorizontalAlignment="Left" Margin="145,425,0,0" TextWrapping="Wrap" Text="{x:Bind viewModel.password, Mode=TwoWay}" VerticalAlignment="Top" Width="180"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="150,270,0,0" VerticalAlignment="Top" Width="100"/>
-        <RadioButton x:Name="radioMusko" Content="Musko" HorizontalAlignment="Left" Margin="150,225,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="radioZensko" Content="Zensko" HorizontalAlignment="Left" Margin="235,225,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioMusko" Command="{x:Bind viewModel.muskoJe, Mode=TwoWay}" Content="Musko" HorizontalAlignment="Left" Margin="150,225,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioZensko" Command="{x:Bind viewModel.zenskoJe, Mode=TwoWay}" Content="Zensko" HorizontalAlignment="Left" Margin="235,225,0,0" VerticalAlignment="Top"/>
         <Button Content="Dodaj" HorizontalAlignment="Left" Margin="255,300,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="buttonRegistruj" Content="Registruj se" HorizontalAlignment="Left" Margin="125,555,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="buttonRegistruj" Content="Registruj se" Command="{Binding Path=viewModel.regBtn}" HorizontalAlignment="Left" Margin="125,525,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Date="{Binding Path=viewModel.datumRodjenja, Mode=TwoWay, Converter={StaticResource theDateConverter}}"  Margin="145,180,-81,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Page>

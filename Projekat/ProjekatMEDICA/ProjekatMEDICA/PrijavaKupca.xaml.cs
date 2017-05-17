@@ -25,6 +25,13 @@ namespace ProjekatMEDICA
         public PrijavaKupca()
         {
             this.InitializeComponent();
+            
+        }
+
+        private void textRegistr_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RegistracijaOnlineKupca));
+
         }
     }
 }
