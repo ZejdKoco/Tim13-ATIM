@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ProjekatMEDICA.ViewModels;
+using Windows.UI.Core;
 
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -28,7 +29,20 @@ namespace ProjekatMEDICA
         public DodavanjeUposlenika()
         {
             this.InitializeComponent();
-            
+            //MenadzerForm otvara dodavanjeProizvoda
+            //stavila da se vidi back u slucaju da menadzer slucajno klikne pogresan button i sl.
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+        }
+
+        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+                e.Handled = true;
+            }
         }
 
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)

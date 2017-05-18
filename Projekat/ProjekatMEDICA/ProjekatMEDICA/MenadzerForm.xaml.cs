@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows.Input;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +24,18 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class MenadzerForm : Page
     {
+        public ICommand dodajProizvod { get; set; }
+        public ICommand dodajUposlenika { get; set; }
+        public ICommand dodajKupca { get; set; }
+        public ICommand brisiProizvod { get; set; }
+        public ICommand brisiUposlenika { get; set; }
+        public ICommand brisiKupca { get; set; }
+        public ICommand azurirajProizvod { get; set; }
+        public ICommand azurirajUposlenika { get; set; }
         public MenadzerForm()
         {
             this.InitializeComponent();
+            DataContext = new MenadzerFormViewModel();
         }
     }
 }

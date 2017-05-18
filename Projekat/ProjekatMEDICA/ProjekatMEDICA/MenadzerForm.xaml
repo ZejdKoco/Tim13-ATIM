@@ -8,17 +8,17 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="proizvod" HorizontalAlignment="Left" Margin="70,80,0,0" TextWrapping="Wrap" Text="Proizvod" VerticalAlignment="Top" Width="70" FlowDirection="RightToLeft"/>
-        <TextBlock x:Name="uposlenik" HorizontalAlignment="Left" Margin="70,160,0,0" TextWrapping="Wrap" Text="Uposlenik" VerticalAlignment="Top" Width="70" FlowDirection="RightToLeft"/>
-        <TextBlock x:Name="kupac" HorizontalAlignment="Left" Margin="70,240,0,0" TextWrapping="Wrap" Text="Kupac" VerticalAlignment="Top" Width="70" FlowDirection="RightToLeft"/>
-        <Button x:Name="buttonDodajProizvod" Content="Dodaj" HorizontalAlignment="Left" Margin="180,55,0,0" VerticalAlignment="Top" Height="70" Width="130"/>
-        <Button x:Name="buttonUposlenikDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="180,135,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
-        <Button x:Name="buttonProizvodAzuriraj" Content="Ažuriraj" HorizontalAlignment="Left" Margin="320,55,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
-        <Button Content="Ažuriraj" HorizontalAlignment="Left" Margin="320,135,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
-        <Button x:Name="buttonProizvodBrisi" Content="Briši" HorizontalAlignment="Left" Margin="460,55,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
-        <Button x:Name="buttonUposlenikBrisi" Content="Briši" HorizontalAlignment="Left" Margin="460,135,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
-        <Button x:Name="buttonKupacDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="250,215,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
-        <Button x:Name="buttonKupacBrisi" Content="Briši" HorizontalAlignment="Left" Margin="390,215,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <TextBlock x:Name="proizvod" HorizontalAlignment="Left" Margin="0,70,0,0" TextWrapping="Wrap" Text="Proizvod" VerticalAlignment="Top" Width="70" FlowDirection="RightToLeft"/>
+        <TextBlock x:Name="uposlenik" HorizontalAlignment="Left" Margin="5,280,0,0" TextWrapping="Wrap" Text="Uposlenik" VerticalAlignment="Top" Width="70" FlowDirection="RightToLeft"/>
+        <TextBlock x:Name="kupac" HorizontalAlignment="Left" Margin="0,490,0,0" TextWrapping="Wrap" Text="Kupac" VerticalAlignment="Top" Width="70" FlowDirection="RightToLeft"/>
+        <Button x:Name="buttonDodajProizvod" Command="{Binding Path=dodajProizvod}" Content="Dodaj" HorizontalAlignment="Left" Margin="80,45,0,0" VerticalAlignment="Top" Height="70" Width="130"/>
+        <Button x:Name="buttonUposlenikDodaj" Content="Dodaj" Command="{Binding Path=dodajUposlenika}" HorizontalAlignment="Left" Margin="80,255,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button x:Name="buttonProizvodAzuriraj" Content="Ažuriraj" Command="{Binding Path=azurirajProizvod}" HorizontalAlignment="Left" Margin="150,125,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button Content="Ažuriraj" HorizontalAlignment="Left" Command="{Binding Path=azurirajUposlenika}" Margin="150,335,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button x:Name="buttonProizvodBrisi" Content="Briši" Command="{Binding Path=brisiProizvod}"  HorizontalAlignment="Left" Margin="215,45,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button x:Name="buttonUposlenikBrisi" Content="Briši" Command="{Binding Path=brisiUposlenika}" HorizontalAlignment="Left" Margin="215,255,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button x:Name="buttonKupacDodaj" Content="Dodaj" Command="{Binding Path=dodajKupca}" HorizontalAlignment="Left" Margin="80,470,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
+        <Button x:Name="buttonKupacBrisi" Content="Briši" Command="{Binding Path=brisiKupca}" HorizontalAlignment="Left" Margin="215,470,0,0" VerticalAlignment="Top" Width="130" Height="70"/>
 
     </Grid>
 </Page>

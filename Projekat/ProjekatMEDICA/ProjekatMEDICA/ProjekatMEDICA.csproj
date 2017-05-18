@@ -123,6 +123,7 @@
     <Compile Include="FormOdabirUloge.xaml.cs">
       <DependentUpon>FormOdabirUloge.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\INavigationService.cs" />
     <Compile Include="IzbrisiProizvod.xaml.cs">
       <DependentUpon>IzbrisiProizvod.xaml</DependentUpon>
     </Compile>
@@ -160,6 +161,7 @@
     <Compile Include="UnosKorisnika.xaml.cs">
       <DependentUpon>UnosKorisnika.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\MenadzerFormViewModel.cs" />
     <Compile Include="ViewModels\RegistracijaViewModel.cs" />
     <Compile Include="ViewModels\DodavanjeUposlenikaViewModel.cs" />
   </ItemGroup>
