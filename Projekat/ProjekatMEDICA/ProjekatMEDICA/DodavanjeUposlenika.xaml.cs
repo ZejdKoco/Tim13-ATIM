@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ProjekatMEDICA.ViewModels;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,6 +24,7 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class DodavanjeUposlenika : Page
     {
+        DodavanjeUposlenikaViewModel viewModel; 
         public DodavanjeUposlenika()
         {
             this.InitializeComponent();
