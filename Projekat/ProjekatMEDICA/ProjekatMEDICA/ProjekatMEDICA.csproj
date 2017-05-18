@@ -139,6 +139,7 @@
     <Compile Include="Models\OnlineKupac.cs" />
     <Compile Include="Models\Proizvod.cs" />
     <Compile Include="Models\StavkaNarudzbe.cs" />
+    <Compile Include="Models\Uposlenik.cs" />
     <Compile Include="NarucivanjeProizvoda.xaml.cs">
       <DependentUpon>NarucivanjeProizvoda.xaml</DependentUpon>
     </Compile>
@@ -161,6 +162,7 @@
     <Compile Include="UnosKorisnika.xaml.cs">
       <DependentUpon>UnosKorisnika.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AzuriranjeProizvodaParentViewModel.cs" />
     <Compile Include="ViewModels\MenadzerFormViewModel.cs" />
     <Compile Include="ViewModels\RegistracijaViewModel.cs" />
     <Compile Include="ViewModels\DodavanjeUposlenikaViewModel.cs" />

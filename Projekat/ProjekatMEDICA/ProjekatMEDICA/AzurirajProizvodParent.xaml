@@ -12,24 +12,11 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <RelativePanel>
-            <TextBlock Name="Id" Text="Naziv ili ID:"
-                       FontSize="18" FontWeight="Normal"
-                       Margin="60,50,0,10"></TextBlock>
-            <TextBox Name="Naziv" MinWidth="200"
-                     RelativePanel.RightOf="Id"
-                     Margin="10,50,0,10"></TextBox>
-            <Button Name="Pretraga" Content="Pretraga"
-                    FontSize="18" FontWeight="Normal"
-                    RelativePanel.RightOf="Id"
-                     Margin="10,120,0,10"></Button>
-            <ListBox Name="Lista"
-                     Margin="60, 190,0,10"
-                     Height="100"
-                     Width="250"
-                     ></ListBox>
-            <Button Name="Potvrdi" Content="Potvrdi"
-                    FontSize="18" FontWeight="Normal"
-                    Margin="235,300,20,0"></Button>
+            <TextBlock Name="Id" Text="Naziv ili ID:" FontSize="18" FontWeight="Normal" Margin="60,50,0,10"></TextBlock>
+            <TextBox Name="Naziv" Text ="{}" MinWidth="200" RelativePanel.RightOf="Id" Margin="10,50,0,10"></TextBox>
+            <Button Name="Pretraga" Content="Pretraga" FontSize="18" FontWeight="Normal" RelativePanel.RightOf="Id" Margin="10,120,0,10"></Button>
+            <ListBox Name="Lista" Margin="60, 190,0,10" Height="100" Width="250"></ListBox>
+            <Button Name="Potvrdi" Content="Potvrdi" FontSize="18" FontWeight="Normal" Margin="235,300,20,0"></Button>
         </RelativePanel>
     </Grid>
 

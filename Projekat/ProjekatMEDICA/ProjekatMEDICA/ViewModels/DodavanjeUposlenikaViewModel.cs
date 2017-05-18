@@ -31,7 +31,7 @@ namespace ProjekatMEDICA.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-        public void pozoviRegistracija()
+        public void pozoviDodavanjeUposlenika()
         {
            unosUposlnika.Navigate(typeof(DodavanjeUposlenika));
         }
