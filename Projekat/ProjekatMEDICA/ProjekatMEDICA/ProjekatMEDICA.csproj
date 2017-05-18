@@ -133,6 +133,7 @@
     <Compile Include="MenadzerForm.xaml.cs">
       <DependentUpon>MenadzerForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Apoteka.cs" />
     <Compile Include="Models\DateConverter.cs" />
     <Compile Include="Models\Kupac.cs" />
     <Compile Include="Models\LiveKupac.cs" />
