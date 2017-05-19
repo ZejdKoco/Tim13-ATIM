@@ -7,6 +7,7 @@ using System.Windows.Input;
 using Windows.UI.Popups;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
+using ProjekatMEDICA.Helper;
 
 namespace ProjekatMEDICA.ViewModels
 {
@@ -24,6 +25,7 @@ namespace ProjekatMEDICA.ViewModels
         public ICommand muskoJe { get; set; }
         public ICommand zenskoJe { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
+        public INavigationService NavigationService { get; set; }
         protected void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)

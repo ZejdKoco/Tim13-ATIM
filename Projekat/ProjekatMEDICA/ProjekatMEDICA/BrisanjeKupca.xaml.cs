@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,11 +27,12 @@ namespace ProjekatMEDICA
         public BrisanjeKupca()
         {
             this.InitializeComponent();
-            //MenadzerForm otvara dodavanjeProizvoda
+            //MenadzerForm otvara brisanjeKupca
             //stavila da se vidi back u slucaju da menadzer slucajno klikne pogresan button i sl.
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            DataContext = new BrisanjeKupcaViewModel();
         }
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
