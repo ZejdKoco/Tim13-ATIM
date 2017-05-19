@@ -1,19 +1,17 @@
-﻿using System;
+﻿using ProjekatMEDICA.Helper;
+using ProjekatMEDICA.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Windows.Input;
-using Windows.UI.Popups;
 using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
-using ProjekatMEDICA.Models;
-using System.Collections.ObjectModel;
-using ProjekatMEDICA.Helper;
+using System.Windows.Input;
 
 namespace ProjekatMEDICA.ViewModels
 {
-    class AzuriranjeProizvodaParentViewModel : INotifyPropertyChanged
+    class IzbrisiProizvodViewModel: INotifyPropertyChanged
     {
         public string naziv { get; set; }
         public ICommand pretragaBtn { get; set; }
@@ -33,18 +31,19 @@ namespace ProjekatMEDICA.ViewModels
         {
             AzuriranjeProizvodaParent.Navigate(typeof(AzurirajProizvodParent));
         }
-        public AzuriranjeProizvodaParentViewModel()
+        public IzbrisiProizvodViewModel()
         {
             NavigationService = new NavigationService();
-            potvrdiBtn = new RelayCommand<object>(potvrdiZapocniAzuriranje, mozeLiSeAzurirati);
+            potvrdiBtn = new RelayCommand<object>(izbrisi, mozeLiSeIzbrisati);
         }
-        public bool mozeLiSeAzurirati(object parametar)
+
+        private void izbrisi(object obj)
+        {
+        }
+
+        public bool mozeLiSeIzbrisati(object parametar)
         {
             return true;
-        }
-        public void potvrdiZapocniAzuriranje(object parametar)
-        {
-            NavigationService.Navigate(typeof(AzuriranjeProizvodaChild));
         }
     }
 }

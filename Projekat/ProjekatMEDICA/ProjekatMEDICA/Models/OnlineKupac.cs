@@ -13,6 +13,10 @@ namespace ProjekatMEDICA.Models
         byte[] slika;
         double stanjeRacuna;
 
+        public OnlineKupac()
+        {
+        }
+
         OnlineKupac(string ime,string prez, string spol, DateTime datRodj, string usern, string pw)
         {
             Ime = ime;

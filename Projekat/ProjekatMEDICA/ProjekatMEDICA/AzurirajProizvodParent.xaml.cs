@@ -28,6 +28,7 @@ namespace ProjekatMEDICA
         public AzurirajProizvodParent()
         {
             this.InitializeComponent();
+            DataContext = new AzuriranjeProizvodaParentViewModel();
             //MenadzerForm otvara dodavanjeProizvoda
             //stavila da se vidi back u slucaju da menadzer slucajno klikne pogresan button i sl.
             var currentView = SystemNavigationManager.GetForCurrentView();

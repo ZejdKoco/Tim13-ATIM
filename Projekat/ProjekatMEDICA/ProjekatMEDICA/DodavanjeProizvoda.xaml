@@ -14,15 +14,15 @@
         <TextBlock x:Name="labelSlika" HorizontalAlignment="Left" Margin="25,225,0,0" TextWrapping="Wrap" Text="Slika :" VerticalAlignment="Top" Width="110" />
         <TextBlock x:Name="labelBarcode" HorizontalAlignment="Left" Margin="25,355,0,0" TextWrapping="Wrap" Text="Barcode :" VerticalAlignment="Top" Width="110"/>
         <TextBlock x:Name="labelOpis" HorizontalAlignment="Left" Margin="25,480,0,0" TextWrapping="Wrap" Text="Komentar/Opis :" VerticalAlignment="Top"/>
-        <TextBox x:Name="textboxNaziv" HorizontalAlignment="Left" Margin="150,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
-        <TextBox x:Name="textboxProizvodjac" HorizontalAlignment="Left" Margin="150,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
-        <TextBox x:Name="textboxKolicina" HorizontalAlignment="Left" Margin="150,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
+        <TextBox  Text ="{x:Bind viewModel.Naziv}" x:Name="textboxNaziv" HorizontalAlignment="Left" Margin="150,55,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="170"/>
+        <TextBox Text ="{x:Bind viewModel.Proizvodjac}" x:Name="textboxProizvodjac" HorizontalAlignment="Left" Margin="150,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox Text="{x:Bind viewModel.Kolicina}" x:Name="textboxKolicina" HorizontalAlignment="Left" Margin="150,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="170"/>
         <Image x:Name="slika" HorizontalAlignment="Left" Height="100" Margin="150,225,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="buttonSlika" Content="Ucitaj" HorizontalAlignment="Left" Margin="260,255,0,0" VerticalAlignment="Top" Padding="8,4"/>
+        <Button x:Name="buttonSlika" Command="{Binding Path=viewModel.dodajSlikuBtn}" Content="Ucitaj" HorizontalAlignment="Left" Margin="260,255,0,0" VerticalAlignment="Top" Padding="8,4"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="150,355,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="barcode" Content="Ucitaj" HorizontalAlignment="Left" Margin="260,385,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="150,480,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="170" Height="80"/>
-        <Button x:Name="buttonDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="120,585,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Command="{Binding Path=viewModel.dodajBarCodeBtn}" x:Name="barcode" Content="Ucitaj" HorizontalAlignment="Left" Margin="260,385,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{x:Bind viewModel.Komentar}" HorizontalAlignment="Left" Margin="150,480,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="170" Height="80"/>
+        <Button Command="{Binding Path=viewModel.dodajBtn}" x:Name="buttonDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="120,585,0,0" VerticalAlignment="Top" Width="120"/>
     
     </Grid>
 </Page>

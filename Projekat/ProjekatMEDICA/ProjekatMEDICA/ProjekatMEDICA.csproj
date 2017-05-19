@@ -163,11 +163,15 @@
     <Compile Include="UnosKorisnika.xaml.cs">
       <DependentUpon>UnosKorisnika.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AzuriranjeProizvodaChildViewModel.cs" />
     <Compile Include="ViewModels\AzuriranjeProizvodaParentViewModel.cs" />
+    <Compile Include="ViewModels\DodajProizvodViewModel.cs" />
+    <Compile Include="ViewModels\IzbrisiProizvodViewModel.cs" />
     <Compile Include="ViewModels\MenadzerFormViewModel.cs" />
     <Compile Include="ViewModels\NarucivanjeProizvodaViewModel.cs" />
     <Compile Include="ViewModels\OdabirUlogeViewModel.cs" />
     <Compile Include="ViewModels\PretragaUposlenikaViewModel.cs" />
+    <Compile Include="ViewModels\PrijavaKupcaViewModel.cs" />
     <Compile Include="ViewModels\ProdavanjeProizvodaViewModel.cs" />
     <Compile Include="ViewModels\RegistracijaViewModel.cs" />
     <Compile Include="ViewModels\DodavanjeUposlenikaViewModel.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,11 +24,13 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class IzbrisiProizvod : Page
     {
+        IzbrisiProizvodViewModel viewModel;
         public IzbrisiProizvod()
         {
             this.InitializeComponent();
             //MenadzerForm otvara dodavanjeProizvoda
             //stavila da se vidi back u slucaju da menadzer slucajno klikne pogresan button i sl.
+            DataContext = new IzbrisiProizvodViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;

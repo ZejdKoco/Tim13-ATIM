@@ -12,15 +12,22 @@ namespace ProjekatMEDICA.Models
         string naziv, id, opis, proizvodjac;
         byte[] slika;
         double cijena;
+        string komentar;
+        int kolicina;
+        public Proizvod()
+        {
+        }
+
         //barcode
 
-        Proizvod(string naz, string id, string proizv, string opis, double cijena)
+        Proizvod(string naz, string id, string proizv, string opis, double cijena, string komentar)
         {
             Naziv = naz;
             Id = id;
             Proizvodjac = proizv;
             Opis = opis;
             Cijena = cijena;
+            Komentar = komentar;
         }
         public string Naziv { get => naziv; set => naziv = value; }
         public string Opis { get => opis; set => opis = value; }
@@ -28,6 +35,7 @@ namespace ProjekatMEDICA.Models
         public string Id { get => id; set => id = value; }
         public byte[] Slika { get => slika; set => slika = value; }
         public double Cijena { get => cijena; set => cijena = value; }
-        
+        public string Komentar { get => komentar; set => komentar = value; }
+        public int Kolicina { get => kolicina; set => kolicina = value; }
     }
 }
