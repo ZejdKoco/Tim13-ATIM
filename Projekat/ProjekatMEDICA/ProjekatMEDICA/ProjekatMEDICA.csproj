@@ -167,6 +167,7 @@
     <Compile Include="ViewModels\MenadzerFormViewModel.cs" />
     <Compile Include="ViewModels\NarucivanjeProizvodaViewModel.cs" />
     <Compile Include="ViewModels\OdabirUlogeViewModel.cs" />
+    <Compile Include="ViewModels\PretragaUposlenikaViewModel.cs" />
     <Compile Include="ViewModels\ProdavanjeProizvodaViewModel.cs" />
     <Compile Include="ViewModels\RegistracijaViewModel.cs" />
     <Compile Include="ViewModels\DodavanjeUposlenikaViewModel.cs" />

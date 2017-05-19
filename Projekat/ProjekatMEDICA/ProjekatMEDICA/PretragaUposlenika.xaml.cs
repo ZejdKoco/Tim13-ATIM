@@ -1,10 +1,13 @@
-﻿using System;
+﻿using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows.Input;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,9 +25,24 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class PretragaUposlenika : Page
     {
+        
+        public ICommand pretragaBtn { get; set; }
+        public ICommand potvrdiBtn { get; set; }
         public PretragaUposlenika()
         {
             this.InitializeComponent();
+            DataContext = new PretragaUposlenikaViewModel();
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+        }
+        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+                e.Handled = true;
+            }
         }
     }
 }

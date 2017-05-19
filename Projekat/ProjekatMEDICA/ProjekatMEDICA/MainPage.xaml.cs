@@ -30,7 +30,7 @@ namespace ProjekatMEDICA
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(FormOdabirUloge)); //ovo je samo za provjeru forme 
+            this.Frame.Navigate(typeof(MenadzerForm)); //ovo je samo za provjeru forme 
         }
     }
 }

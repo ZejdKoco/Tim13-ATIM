@@ -29,8 +29,7 @@
             <RadioButton Content="Zensko" x:Name="radioButtonZenskoAz" HorizontalAlignment="Left" Margin="335,415,0,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="21,477,0,0" TextWrapping="Wrap" Text="Komentar" VerticalAlignment="Top" Height="32"/>
             <TextBox x:Name="textBoxKomentar" HorizontalAlignment="Left" Margin="159,477,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="103" Width="296" TextChanged="textBoxKomentar_TextChanged"/>
-            <Button x:Name="buttonNazad" Content="Nazad" HorizontalAlignment="Left" Margin="159,618,0,0" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="buttonSpasi" Content="Unesi" HorizontalAlignment="Left" Margin="335,618,0,0" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="buttonSpasi" Content="Spremi" HorizontalAlignment="Left" Margin="335,618,0,0" VerticalAlignment="Top" Width="120"/>
 
 
         </Grid>

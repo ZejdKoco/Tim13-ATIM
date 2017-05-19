@@ -110,7 +110,7 @@ namespace ProjekatMEDICA.ViewModels
 
         public void azuUposlenika(Object parameter)
         {
-            NavigationService.Navigate(typeof(AzuriranjeUposlenika));
+            NavigationService.Navigate(typeof(PretragaUposlenika));
         }
     }
 }
