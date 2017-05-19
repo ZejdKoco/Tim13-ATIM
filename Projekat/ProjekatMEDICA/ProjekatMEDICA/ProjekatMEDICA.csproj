@@ -134,7 +134,7 @@
       <DependentUpon>MenadzerForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Apoteka.cs" />
-    <Compile Include="Models\DateConverter.cs" />
+    <Compile Include="Helper\DateConverter.cs" />
     <Compile Include="Models\Kupac.cs" />
     <Compile Include="Models\LiveKupac.cs" />
     <Compile Include="Models\OnlineKupac.cs" />
@@ -165,8 +165,11 @@
     </Compile>
     <Compile Include="ViewModels\AzuriranjeProizvodaParentViewModel.cs" />
     <Compile Include="ViewModels\MenadzerFormViewModel.cs" />
+    <Compile Include="ViewModels\NarucivanjeProizvodaViewModel.cs" />
+    <Compile Include="ViewModels\ProdavanjeProizvodaViewModel.cs" />
     <Compile Include="ViewModels\RegistracijaViewModel.cs" />
     <Compile Include="ViewModels\DodavanjeUposlenikaViewModel.cs" />
+    <Compile Include="ViewModels\UnosKorisnikaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

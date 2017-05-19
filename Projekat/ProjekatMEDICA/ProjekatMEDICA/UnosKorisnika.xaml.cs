@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjekatMEDICA.Models;
+using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,6 +33,8 @@ namespace ProjekatMEDICA
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+
+            DataContext = new UnosKorisnikaViewModel();
         }
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)

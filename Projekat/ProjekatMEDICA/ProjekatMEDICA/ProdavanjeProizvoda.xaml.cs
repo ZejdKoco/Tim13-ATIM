@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,5 +27,10 @@ namespace ProjekatMEDICA
         {
             this.InitializeComponent();
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            DataContext = (ProdavanjeProizvodaViewModel)e.Parameter;
+        }
     }
 }

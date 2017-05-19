@@ -8,9 +8,10 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox HorizontalAlignment="Left" Margin="65,40,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="280"/>
-        <Button Content="Trazi" HorizontalAlignment="Left" Margin="360,40,0,0" VerticalAlignment="Top" Width="118"/>
-        <ListView HorizontalAlignment="Left" Height="252" Margin="65,98,0,0" VerticalAlignment="Top" Width="413"/>
+        <Button Content="Odobri" Command="{Binding Path=odobri}" HorizontalAlignment="Left" Margin="135,545,0,0" VerticalAlignment="Top"/>
+        <ListView HorizontalAlignment="Left" Height="454" Margin="45,65,0,0" VerticalAlignment="Top" Width="270"
+                 
+            />
 
     </Grid>
 </Page>

@@ -38,5 +38,27 @@ namespace ProjekatMEDICA.ViewModels
             registr.Navigate(typeof(RegistracijaOnlineKupca));
         }
 
+        public bool sveUredu()
+        {
+            if (ime == "") return false;
+            if (prezime == "") return false;
+            if (username == "") return false;
+            if (password == "") return false;
+
+            return true;
+        }
+
+        public async void registrujSe(Object o)
+        {
+            if (sveUredu())
+            {
+                
+            }
+            var dialog = new MessageDialog("Uspjesno ste registrovani");
+            await dialog.ShowAsync();
+            // DORADITI, VALJDA S BAZOM POVEZATI
+            // NEYY ://
+        }
+
     }
 }
