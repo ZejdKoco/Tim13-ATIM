@@ -165,18 +165,8 @@
     </Compile>
     <Compile Include="ViewModels\AzuriranjeProizvodaChildViewModel.cs" />
     <Compile Include="ViewModels\AzuriranjeProizvodaParentViewModel.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Compile Include="ViewModels\BrisanjeKupcaViewModel.cs" />
-    <Compile Include="ViewModels\BrisanjeUposlenikaViewModel.cs" />
-=======
     <Compile Include="ViewModels\DodajProizvodViewModel.cs" />
     <Compile Include="ViewModels\IzbrisiProizvodViewModel.cs" />
->>>>>>> origin/master
-=======
-    <Compile Include="ViewModels\DodajProizvodViewModel.cs" />
-    <Compile Include="ViewModels\IzbrisiProizvodViewModel.cs" />
->>>>>>> origin/master
     <Compile Include="ViewModels\MenadzerFormViewModel.cs" />
     <Compile Include="ViewModels\NarucivanjeProizvodaViewModel.cs" />
     <Compile Include="ViewModels\OdabirUlogeViewModel.cs" />
