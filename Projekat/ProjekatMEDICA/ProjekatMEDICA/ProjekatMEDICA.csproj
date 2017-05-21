@@ -172,6 +172,7 @@
     <Compile Include="ViewModels\OdabirUlogeViewModel.cs" />
     <Compile Include="ViewModels\PretragaUposlenikaViewModel.cs" />
     <Compile Include="ViewModels\PrijavaKupcaViewModel.cs" />
+    <Compile Include="ViewModels\PrijavaMenadzeraViewModel.cs" />
     <Compile Include="ViewModels\ProdavanjeProizvodaViewModel.cs" />
     <Compile Include="ViewModels\RegistracijaViewModel.cs" />
     <Compile Include="ViewModels\DodavanjeUposlenikaViewModel.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,7 +25,9 @@ namespace ProjekatMEDICA
     {
         public PrijavaMenadzera()
         {
+            PrijavaMenadzeraViewModel viewModel;
             this.InitializeComponent();
+            DataContext = new PrijavaMenadzeraViewModel();
         }
     }
 }
