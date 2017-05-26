@@ -15,7 +15,7 @@ namespace ProjekatMEDICA.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         public string imePrezimeID { get; set; }
         public ICommand pretragaBtn { get; set; }
-        public ObservableCollection<Kupac> uposlenici { get; set; }
+        public ObservableCollection<Kupac> uposlenici { get; set; } //bind
         public ICommand obrisiBtn { get; set; }
         public ICommand nazadBtn { get; set; }
         protected void OnPropertyChanged(string propertyName)
