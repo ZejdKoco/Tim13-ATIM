@@ -58,7 +58,7 @@ namespace ProjekatMEDICA.Models
         
         public static Uposlenik nadjiMenadzera(string id)
         {
-            return _uposlenici.Where(u => u.username.Equals(id)).FirstOrDefault();
+            return _uposlenici.Where(u => u.username.Equals(id) && u.uloga.Equals("Menadzer")).FirstOrDefault();
             
         }
 
@@ -71,6 +71,11 @@ namespace ProjekatMEDICA.Models
         public static IList<Proizvod> dajSveProizvode()
         {
             return _proizvodi;
+        }
+
+        public static Uposlenik nadjiProdavaca(string username, string password)
+        {
+            return _uposlenici.Where(u => u.username.Equals(username) && u.password.Equals(password) && u.uloga.Equals("Prodavac")).FirstOrDefault();
         }
     }
 }

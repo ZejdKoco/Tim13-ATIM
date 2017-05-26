@@ -12,7 +12,7 @@ namespace ProjekatMEDICA.Models
         
         public Prodavac(string ime, string prezime, int id, string usernme, string pw, DateTime dR, DateTime dZ) :base(ime,prezime,id,dR,dZ)
         {
-            uloga = "Uposlenik";
+            uloga = "Prodavac";
             username = usernme;
             password = pw;
         }
