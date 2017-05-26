@@ -23,6 +23,8 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class ProdavanjeProizvoda : Page
     {
+        ProdavanjeProizvodaViewModel viewModel;
+
         public ProdavanjeProizvoda()
         {
             this.InitializeComponent();
@@ -31,6 +33,8 @@ namespace ProjekatMEDICA
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DataContext = (ProdavanjeProizvodaViewModel)e.Parameter;
-        }
+        }
+
+        
     }
 }

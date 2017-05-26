@@ -17,6 +17,7 @@ namespace ProjekatMEDICA.ViewModels
         public string password { get; set; }
         public ICommand prijaviSe { get; set; }
         public INavigationService navigationService { get; set; }
+        public Prodavac prodavac { get; set; }
 
         public PrijavaProdavacaViewModel()
         {
@@ -26,13 +27,13 @@ namespace ProjekatMEDICA.ViewModels
 
         public async void prijaviProdavaca(object parameter)
         {
-            Prodavac p = (Prodavac)DefaultPodaci.nadjiProdavaca(username, password);
-            if (p == null)
+            prodavac = (Prodavac)DefaultPodaci.nadjiProdavaca(username, password);
+            if (prodavac == null)
             {
                 var dialog1 = new MessageDialog("Neispravni podaci!");
                 await dialog1.ShowAsync();
             }
-            else navigationService.Navigate(typeof(ProdavanjeProizvoda));
+            else navigationService.Navigate(typeof(ProdavanjeProizvoda), new ProdavanjeProizvodaViewModel(this));
         }
     
         public event PropertyChangedEventHandler PropertyChanged;
