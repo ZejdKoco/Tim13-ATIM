@@ -15,10 +15,12 @@
             <TextBlock Name="Username" Text="Korisnicko ime:"
                        FontSize="18" FontWeight="Normal"
                        Margin="15,30,10,10"></TextBlock>
-            <TextBox Name="Korisnicko" MinWidth="200"
+            <TextBox MinWidth="200"
+                     Text="{x:Bind viewModel.korisnickoIme, Mode=TwoWay}"
                      RelativePanel.RightOf="Username"
-                     Margin="5,30,10,10"></TextBox>
+                     Margin="0,30,10.333,10" HorizontalAlignment="Right" Width="200"></TextBox>
             <Button Name="Prijava" Content="Prijava"
+                    Command="{x:Bind viewModel.PotvrdiBtn}"
                     FontSize="18" FontWeight="Normal"
                     Margin="280,100,20,10"></Button>
         </RelativePanel>

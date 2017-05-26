@@ -16,18 +16,17 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace ProjekatMEDICA
+namespace ProjekatMEDICA.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class PrijavaMenadzera : Page
+    public sealed partial class PrijavaProdavac : Page
     {
-        public PrijavaMenadzera()
+        public PrijavaProdavac()
         {
-            PrijavaMenadzeraViewModel viewModel;
             this.InitializeComponent();
-            DataContext = new PrijavaMenadzeraViewModel();
+            DataContext = new PrijavaProdavacaViewModel();
         }
     }
 }

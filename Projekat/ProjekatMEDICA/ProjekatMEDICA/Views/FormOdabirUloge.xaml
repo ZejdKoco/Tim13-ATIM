@@ -18,7 +18,7 @@
         <Image HorizontalAlignment="Left" Height="226" Margin="37,10,0,0" VerticalAlignment="Top" Width="329" Source="Assets/Square150x150Logo.png" Stretch="Fill"/>
         <Button Name="buttonKupac"  Content="Kupac" Command="{Binding Path=loginKupac}" HorizontalAlignment="Left" Margin="37,241,0,0" VerticalAlignment="Top" Height="81" Width="133" Style="{StaticResource buttonStilZaPocFormu}"/>
         <Button Content="Menadzer" Name="buttonMenadzer" Command="{Binding Path=loginMenadzer}" HorizontalAlignment="Left" Margin="239,241,0,0" VerticalAlignment="Top" Height="81" Width="133"/>
-        <Button Content="Prodavac" Name="buttonProdavac" HorizontalAlignment="Left" Margin="37,349,0,0" VerticalAlignment="Top" Height="81" Width="133"/>
-        <Button Content="Dostavljac" Name="buttonDostavljac" HorizontalAlignment="Left" Margin="239,349,0,0" VerticalAlignment="Top" Height="81" Width="133"/>
+        <Button Content="Prodavac" Name="buttonProdavac" Command="{Binding Path=loginProdavac}" HorizontalAlignment="Left" Margin="37,349,0,0" VerticalAlignment="Top" Height="81" Width="133"/>
+        <Button Content="Dostavljac" Name="buttonDostavljac" Command="{Binding Path=loginDostavljac}" HorizontalAlignment="Left" Margin="239,349,0,0" VerticalAlignment="Top" Height="81" Width="133"/>
     </Grid>
 </Page>

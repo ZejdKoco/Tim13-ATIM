@@ -96,41 +96,46 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AzurirajProizvodParent.xaml.cs">
+    <Compile Include="Models\DefaultPodaci.cs" />
+    <Compile Include="Models\Dostavljac.cs" />
+    <Compile Include="Models\Menadzer.cs" />
+    <Compile Include="Models\Prodavac.cs" />
+    <Compile Include="ViewModels\PrijavaProdavacaViewModel.cs" />
+    <Compile Include="Views\AzurirajProizvodParent.xaml.cs">
       <DependentUpon>AzurirajProizvodParent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AzuriranjeProizvodaChild.xaml.cs">
+    <Compile Include="Views\AzuriranjeProizvodaChild.xaml.cs">
       <DependentUpon>AzuriranjeProizvodaChild.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AzuriranjeUposlenika.xaml.cs">
+    <Compile Include="Views\AzuriranjeUposlenika.xaml.cs">
       <DependentUpon>AzuriranjeUposlenika.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BrisanjeKupca.xaml.cs">
+    <Compile Include="Views\BrisanjeKupca.xaml.cs">
       <DependentUpon>BrisanjeKupca.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BrisanjeUposlenika.xaml.cs">
+    <Compile Include="Views\BrisanjeUposlenika.xaml.cs">
       <DependentUpon>BrisanjeUposlenika.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodavanjeProizvoda.xaml.cs">
+    <Compile Include="Views\DodavanjeProizvoda.xaml.cs">
       <DependentUpon>DodavanjeProizvoda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodavanjeUposlenika.xaml.cs">
+    <Compile Include="Views\DodavanjeUposlenika.xaml.cs">
       <DependentUpon>DodavanjeUposlenika.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DostavaProizvoda.xaml.cs">
+    <Compile Include="Views\DostavaProizvoda.xaml.cs">
       <DependentUpon>DostavaProizvoda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FormOdabirUloge.xaml.cs">
+    <Compile Include="Views\FormOdabirUloge.xaml.cs">
       <DependentUpon>FormOdabirUloge.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper\INavigationService.cs" />
-    <Compile Include="IzbrisiProizvod.xaml.cs">
+    <Compile Include="Views\IzbrisiProizvod.xaml.cs">
       <DependentUpon>IzbrisiProizvod.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenadzerForm.xaml.cs">
+    <Compile Include="Views\MenadzerForm.xaml.cs">
       <DependentUpon>MenadzerForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Apoteka.cs" />
@@ -141,26 +146,32 @@
     <Compile Include="Models\Proizvod.cs" />
     <Compile Include="Models\StavkaNarudzbe.cs" />
     <Compile Include="Models\Uposlenik.cs" />
-    <Compile Include="NarucivanjeProizvoda.xaml.cs">
+    <Compile Include="Views\NarucivanjeProizvoda.xaml.cs">
       <DependentUpon>NarucivanjeProizvoda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PretragaUposlenika.xaml.cs">
+    <Compile Include="Views\PretragaUposlenika.xaml.cs">
       <DependentUpon>PretragaUposlenika.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PrijavaKupca.xaml.cs">
+    <Compile Include="Views\PrijavaDostavljaca.xaml.cs">
+      <DependentUpon>PrijavaDostavljaca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrijavaKupca.xaml.cs">
       <DependentUpon>PrijavaKupca.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PrijavaMenadzera.xaml.cs">
+    <Compile Include="Views\PrijavaMenadzera.xaml.cs">
       <DependentUpon>PrijavaMenadzera.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProdavanjeProizvoda.xaml.cs">
+    <Compile Include="Views\PrijavaProdavac.xaml.cs">
+      <DependentUpon>PrijavaProdavac.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdavanjeProizvoda.xaml.cs">
       <DependentUpon>ProdavanjeProizvoda.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistracijaOnlineKupca.xaml.cs">
+    <Compile Include="Views\RegistracijaOnlineKupca.xaml.cs">
       <DependentUpon>RegistracijaOnlineKupca.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UnosKorisnika.xaml.cs">
+    <Compile Include="Views\UnosKorisnika.xaml.cs">
       <DependentUpon>UnosKorisnika.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AzuriranjeProizvodaChildViewModel.cs" />
@@ -198,76 +209,84 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AzurirajProizvodParent.xaml">
+    <Page Include="Views\AzurirajProizvodParent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AzuriranjeProizvodaChild.xaml">
+    <Page Include="Views\AzuriranjeProizvodaChild.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AzuriranjeUposlenika.xaml">
+    <Page Include="Views\AzuriranjeUposlenika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BrisanjeKupca.xaml">
+    <Page Include="Views\BrisanjeKupca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BrisanjeUposlenika.xaml">
+    <Page Include="Views\BrisanjeUposlenika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DodavanjeProizvoda.xaml">
+    <Page Include="Views\DodavanjeProizvoda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DodavanjeUposlenika.xaml">
+    <Page Include="Views\DodavanjeUposlenika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DostavaProizvoda.xaml">
+    <Page Include="Views\DostavaProizvoda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzbrisiProizvod.xaml">
+    <Page Include="Views\IzbrisiProizvod.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenadzerForm.xaml">
+    <Page Include="Views\MenadzerForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NarucivanjeProizvoda.xaml">
+    <Page Include="Views\NarucivanjeProizvoda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PretragaUposlenika.xaml">
+    <Page Include="Views\PretragaUposlenika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrijavaKupca.xaml">
+    <Page Include="Views\PrijavaDostavljaca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrijavaMenadzera.xaml">
+    <Page Include="Views\PrijavaKupca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProdavanjeProizvoda.xaml">
+    <Page Include="Views\PrijavaMenadzera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RegistracijaOnlineKupca.xaml">
+    <Page Include="Views\PrijavaProdavac.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StilZaButtons.xaml">
+    <Page Include="Views\ProdavanjeProizvoda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegistracijaOnlineKupca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StilZaButtons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
-    <Page Include="FormOdabirUloge.xaml">
+    <Page Include="Views\FormOdabirUloge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -275,7 +294,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UnosKorisnika.xaml">
+    <Page Include="Views\UnosKorisnika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
