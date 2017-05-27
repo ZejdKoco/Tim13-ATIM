@@ -7,30 +7,38 @@ using System.Windows.Input;
 using Windows.UI.Popups;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
+using ProjekatMEDICA.Helper;
+using ProjekatMEDICA.Models;
 
 namespace ProjekatMEDICA.ViewModels
 {
     class DodavanjeUposlenikaViewModel : INotifyPropertyChanged
     {
-        public INavigate unosUposlnika;
+        public INavigate unosUposlenika;
         public string ime { get; set; }
         public string prezime { get; set; }
         public DateTime datumRodjenja { get; set; }
+        public DateTime datumZaposlenja { get; set; }
         public string maticni { get; set; }
-<<<<<<< HEAD
         public string username { get; set; }
         public string password { get; set; }
         public bool prodavacJe { get; set; }
         public bool dostavljacJe { get; set; }
-=======
-        public string strucnSprema { get; set; }
-        public string komentar { get; set; }
->>>>>>> c748e942de5631c319dec2f739a560f4b90c57b9
         public ICommand regBtn { get; set; }
         public ICommand backBtn { get; set; }
-        public ICommand muskoJe { get; set; }
-        public ICommand zenskoJe { get; set; }
+        public ICommand prodavac { get; set; }
+        public ICommand dostavljac { get; set; }
+        public Prodavac prodavacClass;
+        public Dostavljac dostavljacClass;
+        private INavigationService NavigationService;
         public event PropertyChangedEventHandler PropertyChanged;
+        public DodavanjeUposlenikaViewModel()
+        {
+            NavigationService = new NavigationService();
+            regBtn = new RelayCommand<object>(potvrdiDodavanje);
+            prodavac = new RelayCommand<object>(potvrdiProdavacJe);
+            dostavljac = new RelayCommand<object>(potvrdiDostavljacJe);
+        }
         protected void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -38,10 +46,22 @@ namespace ProjekatMEDICA.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+        public void potvrdiProdavacJe(object parametar)
+        {
+            int id = 1;
+            prodavacClass = new Prodavac(ime, prezime, id, username, password, datumRodjenja, datumZaposlenja);
+
+            prodavacJe = true;
+        }
+        public void potvrdiDostavljacJe(object parametar)
+        {
+            int id = 1;
+            dostavljacClass = new Dostavljac(ime, prezime, id, username, password, datumRodjenja, datumZaposlenja);
+            dostavljacJe = true;
+        }
         public void pozoviDodavanjeUposlenika()
         {
-<<<<<<< HEAD
-           unosUposlenika.Navigate(typeof(DodavanjeUposlenika));
+            unosUposlenika.Navigate(typeof(DodavanjeUposlenika));
         }
         public void potvrdiDodavanje(object parametar)
         {
@@ -49,12 +69,7 @@ namespace ProjekatMEDICA.ViewModels
             if (prodavacJe) DefaultPodaci._uposlenici.Add(prodavacClass);
             if (dostavljacJe) DefaultPodaci._uposlenici.Add(dostavljacClass);
             //NavigationService.Navigate(typeof(MenadzerForm));
-<<<<<<< HEAD
-=======
-=======
-           unosUposlnika.Navigate(typeof(DodavanjeUposlenika));
->>>>>>> c748e942de5631c319dec2f739a560f4b90c57b9
->>>>>>> 6f61c2f5c801e51039b1dfcf5ab15d81bd6a7cdc
         }
+
     }
 }
