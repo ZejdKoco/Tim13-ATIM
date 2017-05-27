@@ -19,9 +19,10 @@ namespace ProjekatMEDICA.ViewModels
         public ICommand pretragaBtn { get; set; }
         public ObservableCollection<Proizvod> proizvodi { get; set; }
         public ICommand potvrdiBtn { get; set; }
-        public INavigationService AzuriranjeProizvodaParent { get => NavigationService; set => NavigationService = value; }
+        public Proizvod odabrani { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
-        private INavigationService NavigationService;
+        public INavigationService NavigationService { get; set; }
         protected void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -31,20 +32,58 @@ namespace ProjekatMEDICA.ViewModels
         }
         public void pozivAzuriranjeProizvodaParent()
         {
-            AzuriranjeProizvodaParent.Navigate(typeof(AzurirajProizvodParent));
+            NavigationService.Navigate(typeof(AzurirajProizvodParent));
         }
         public AzuriranjeProizvodaParentViewModel()
         {
             NavigationService = new NavigationService();
             potvrdiBtn = new RelayCommand<object>(potvrdiZapocniAzuriranje, mozeLiSeAzurirati);
+            pretragaBtn = new RelayCommand<object>(pretragaProizvoda, moze);
+            proizvodi = new ObservableCollection<Proizvod>();
+            Proizvodi();
         }
+
+        private bool moze(object arg)
+        {
+            return true;
+        }
+
+        private async void pretragaProizvoda(object obj)
+        {
+            Proizvod p = (Proizvod)DefaultPodaci.nadjiProizvod(naziv);
+            if (p == null)
+            {
+                var dialog1 = new MessageDialog("Neispravni podaci!");
+                await dialog1.ShowAsync();
+            }
+            // NavigationService.Navigate(typeof(AzuriranjeProizvodaChild), new AzuriranjeProizvodaChildViewModel(this));
+        }
+
         public bool mozeLiSeAzurirati(object parametar)
         {
             return true;
         }
-        public void potvrdiZapocniAzuriranje(object parametar)
+        public async void potvrdiZapocniAzuriranje(object parametar)
         {
-            NavigationService.Navigate(typeof(AzuriranjeProizvodaChild));
+            if (odabrani == null)
+            {
+                var dialog1 = new MessageDialog("Niste odabrali proizvod");
+                await dialog1.ShowAsync();
+            }
+            else
+            {
+
+                NavigationService.Navigate(typeof(AzuriranjeProizvodaChild), new AzuriranjeProizvodaChildViewModel(this));
+            }
+        }
+        public void Proizvodi()
+        {
+            foreach (Proizvod p in DefaultPodaci._proizvodi)
+            {
+                proizvodi.Add(new Proizvod(p.Naziv, p.Id, p.Proizvodjac, p.Opis, p.Cijena, p.Kolicina, p.Komentar));
+            }
+            proizvodi.Add(new Proizvod("amila", "5", "japalak", "napokon", 0.5, 1, "ccc"));
+
         }
     }
 }

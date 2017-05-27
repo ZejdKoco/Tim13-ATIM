@@ -28,7 +28,7 @@ namespace ProjekatMEDICA
         public AzuriranjeProizvodaChild()
         {
             this.InitializeComponent();
-            DataContext = new AzuriranjeProizvodaChildViewModel();
+            // viewModel = new AzuriranjeProizvodaChildViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
@@ -41,6 +41,10 @@ namespace ProjekatMEDICA
                 Frame.GoBack();
                 e.Handled = true;
             }
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            viewModel = (AzuriranjeProizvodaChildViewModel)e.Parameter;
         }
     }
 }

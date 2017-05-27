@@ -40,6 +40,20 @@ namespace ProjekatMEDICA.Models
             }
         };
 
+        public static List<Kupac> _nepotvrdjeniKupci = new List<Kupac>()
+        {
+            new OnlineKupac()
+            {
+                Ime = "Nepotvrdjeni",
+                Prezime = "Nepotvrdjeni",
+                Spol = "zensko",
+                DatumRodjenja = DateTime.Now,
+                Username = "amila2",
+                Password = "amila2"
+            }
+        };
+        
+
         public static IList<Kupac> dajSveKupce()
         {
             return _kupci;
@@ -72,8 +86,8 @@ namespace ProjekatMEDICA.Models
         public static ObservableCollection<Proizvod> _proizvodi = new ObservableCollection<Proizvod>()
         {
             //string naz, string id, string proizv, string opis, double cijena, string komentar
-            new Proizvod("Aspirin", "1", "Proizvodjac", "Opis", 2.5, "Komentar"),
-            new Proizvod("Kafetin", "2", "Proizvodjac", "Opis", 12, "Komentar")
+            new Proizvod("Aspirin", "1", "Proizvodjac", "Opis", 2.5,1, "Komentar"),
+            new Proizvod("Kafetin", "2", "Proizvodjac", "Opis", 12,3, "Komentar")
         };
 
         public static ObservableCollection<Proizvod> dajSveProizvode()
@@ -84,6 +98,10 @@ namespace ProjekatMEDICA.Models
         public static Uposlenik nadjiProdavaca(string username, string password)
         {
             return _uposlenici.Where(u => u.username.Equals(username) && u.password.Equals(password) && u.uloga.Equals("Prodavac")).FirstOrDefault();
+        }
+        public static Proizvod nadjiProizvod(string id)
+        {
+            return _proizvodi.Where(i => i.Naziv.Equals(id) || i.Id.Equals(id)).FirstOrDefault();
         }
     }
 }

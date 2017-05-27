@@ -10,14 +10,14 @@ namespace ProjekatMEDICA.Models
     {
         string ime, prezime, id, spol, username, password;
         DateTime datumRodjenja;
-        byte[] slika;
+        
         double stanjeRacuna;
 
         public OnlineKupac()
         {
         }
 
-        OnlineKupac(string ime,string prez, string spol, DateTime datRodj, string usern, string pw)
+        public OnlineKupac(string ime,string prez, string spol, DateTime datRodj, string usern, string pw)
         {
             Ime = ime;
             Prezime = prez;
@@ -34,7 +34,6 @@ namespace ProjekatMEDICA.Models
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public DateTime DatumRodjenja { get => datumRodjenja; set => datumRodjenja = value; }
-        public byte[] Slika { get => slika; set => slika = value; }
         public double StanjeRacuna { get => stanjeRacuna; set => stanjeRacuna = value; }
     }
 

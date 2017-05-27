@@ -25,6 +25,7 @@ namespace ProjekatMEDICA.ViewModels
         string komentar;
         int kolicina;
         ICommand spremiBtn;
+        AzuriranjeProizvodaParentViewModel parent;
         private INavigationService navigationService;
         public string Naziv { get => naziv; set => naziv = value; }
         public string Id { get => id; set => id = value; }
@@ -37,6 +38,7 @@ namespace ProjekatMEDICA.ViewModels
         public ICommand SpremiBtn { get => spremiBtn; set => spremiBtn = value; }
         public Proizvod Proizvod { get => proizvod; set => proizvod = value; }
         public int Kolicina { get => kolicina; set => kolicina = value; }
+        internal AzuriranjeProizvodaParentViewModel Parent { get => parent; set => parent = value; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
@@ -49,12 +51,33 @@ namespace ProjekatMEDICA.ViewModels
         public AzuriranjeProizvodaChildViewModel()
         {
             navigationService = new NavigationService();
-            proizvod = new Proizvod();
-            SpremiBtn = new RelayCommand<object>(spremiIzmjene);
+            SpremiBtn = new RelayCommand<object>(spremiIzmjene, moze);
         }
-        public void spremiIzmjene(object parametar)
+
+        private bool moze(object arg)
         {
-            //sta sad...
+            return true;
+        }
+
+        public AzuriranjeProizvodaChildViewModel(AzuriranjeProizvodaParentViewModel parent)
+        {
+            this.Parent = parent;
+            navigationService = new NavigationService();
+            proizvod = parent.odabrani;
+            SpremiBtn = new RelayCommand<object>(spremiIzmjene, moze);
+            naziv = proizvod.Naziv;
+            id = proizvod.Id;
+            opis = proizvod.Opis;
+            proizvodjac = proizvod.Proizvodjac;
+            komentar = proizvod.Komentar;
+            slika = proizvod.Slika;
+            cijena = proizvod.Cijena;
+            kolicina = proizvod.Kolicina;
+        }
+        public async void spremiIzmjene(object parametar)
+        {
+            var dialog1 = new MessageDialog("Jos nista");
+            await dialog1.ShowAsync();
         }
     }
 }

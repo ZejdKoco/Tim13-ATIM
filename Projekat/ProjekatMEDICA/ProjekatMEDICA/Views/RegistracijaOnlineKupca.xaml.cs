@@ -29,6 +29,9 @@ namespace ProjekatMEDICA
         public RegistracijaOnlineKupca()
         {
             this.InitializeComponent();
+            //viewModel = new RegistracijaViewModel();
+            DataContext = new RegistracijaViewModel();
+
             //MenadzerForm otvara dodavanjeProizvoda
             //stavila da se vidi back u slucaju da menadzer slucajno klikne pogresan button i sl.
             var currentView = SystemNavigationManager.GetForCurrentView();
