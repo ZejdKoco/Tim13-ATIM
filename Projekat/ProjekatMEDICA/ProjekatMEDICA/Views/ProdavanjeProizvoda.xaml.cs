@@ -28,7 +28,7 @@ namespace ProjekatMEDICA
         public ProdavanjeProizvoda()
         {
             this.InitializeComponent();
-
+            DataContext = new ProdavanjeProizvodaViewModel();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

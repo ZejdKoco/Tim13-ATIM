@@ -11,13 +11,16 @@ namespace ProjekatMEDICA.ViewModels
 {
     class UnosKorisnikaViewModel
     {
-        ObservableCollection<Kupac> zahtjeviKupaca { get; set; }
-        ICommand odobri;
+        public ICommand odobri { get; set; }
+        public ObservableCollection<Kupac> kupcii { get; set; }
+        public Kupac odabraniKupac { get; set; }
 
         public UnosKorisnikaViewModel()
         {
             odobri = new RelayCommand<object>(odobrifja, mozeSeOdobriti);
-
+            kupcii = new ObservableCollection<Kupac>();
+            foreach (OnlineKupac k in DefaultPodaci._nepotvrdjeniKupci) kupcii.Add(k);
+            odabraniKupac = kupcii[0];
         }
 
         public bool mozeSeOdobriti(Object o)
