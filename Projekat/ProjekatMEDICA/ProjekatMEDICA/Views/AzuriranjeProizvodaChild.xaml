@@ -21,14 +21,14 @@
         <RelativePanel>
             <TextBlock Name="Naziv" Text="Naziv"  MinWidth="100"
                    FontSize="18" FontWeight="Normal" Margin="10, 10, 5, 10"></TextBlock>
-            <TextBox Text="{x:Bind viewModel.Naziv}" MinWidth="200" 
+            <TextBox Text="{x:Bind viewModel.Naziv, Mode=TwoWay}" MinWidth="200" 
                       RelativePanel.RightOf="Naziv"
                       Margin="10, 10, 5, 10"></TextBox>
             <TextBlock Name="Proizvodjac" Text="Proizvodjac" MinWidth="100"
                        FontSize="18" FontWeight="Normal" 
                        Margin="10, 70, 5, 10"
                        ></TextBlock>
-            <TextBox Text="{x:Bind viewModel.Proizvodjac}" MinWidth="200" 
+            <TextBox Text="{x:Bind viewModel.Proizvodjac, Mode=TwoWay}" MinWidth="200" 
                       RelativePanel.RightOf="Proizvodjac"
                       Margin="10,70,5, 10"
                       ></TextBox>
@@ -36,18 +36,18 @@
                        FontSize="18" FontWeight="Normal" 
                        Margin="10, 140, 5, 10"
                        ></TextBlock>
-            <TextBox  Text="{x:Bind viewModel.Kolicina}" MinWidth="200" 
+            <TextBox  Text="{x:Bind viewModel.Kolicina, Mode=TwoWay}" MinWidth="200" 
                       RelativePanel.RightOf="Kolicina"
                       Margin="10,140,5, 10"
                       ></TextBox>
 
-            <TextBlock Name="Slika" Text="Slika:"
+            <TextBlock Name="Cijena" Text="Cijena:" MinWidth="100"
                        FontSize="18" FontWeight="Normal"
                        Margin="10, 210, 5, 10"></TextBlock>
-            <Image  Name="Img" RelativePanel.RightOf="Slika"
-                   Height="70" Width="70"  
-                   Margin="70, 190, 5, 10"
-                   Source="Assets/LockScreenLogo.png"></Image>
+            <TextBox  Text="{x:Bind viewModel.Cijena, Mode=TwoWay}" MinWidth="200" 
+                      RelativePanel.RightOf="Cijena"
+                      Margin="10,210,5, 10"
+                      ></TextBox>
             <TextBlock Name="BarCode" Text="Barcode:"
                        FontSize="18" FontWeight="Normal"
                        Margin="10,280, 5, 10"></TextBlock>
@@ -57,13 +57,13 @@
             <TextBlock Name="Komentar" Text="Komentar:"
                        FontSize="18" FontWeight="Normal"
                        Margin="10,350, 5, 10"></TextBlock>
-            <TextBox Text="{x:Bind viewModel.Komentar}"  Name="Kom" 
+            <TextBox Text="{x:Bind viewModel.Komentar, Mode=TwoWay}"  Name="Kom" 
                          Margin="20, 350, 5, 10"
                          RelativePanel.RightOf="Komentar"
                          MinWidth="200"
                          MinHeight="75"
                           ></TextBox>
-            <Button Command ="{Binding Path=viewMode.spremiBtn}" Name="Spremi" Content="Spremi"
+            <Button Command ="{x:Bind viewModel.SpremiBtn, Mode=TwoWay}" Name="Spremi" Content="Spremi"
                     Margin="230,450, 20, 30"
                     FontSize="18"
                     FontWeight="Normal"
@@ -73,3 +73,4 @@
 
     </Grid>
 </Page>
+
