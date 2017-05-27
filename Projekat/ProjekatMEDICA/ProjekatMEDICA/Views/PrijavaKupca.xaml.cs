@@ -29,6 +29,7 @@ namespace ProjekatMEDICA
         {
             this.InitializeComponent();
             DataContext = new PrijavaKupcaViewModel();
+
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
@@ -44,10 +45,6 @@ namespace ProjekatMEDICA
         }
 
 
-        private void textRegistr_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(RegistracijaOnlineKupca));
-
-        }
+        
     }
 }

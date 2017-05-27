@@ -19,19 +19,17 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Prezime :" VerticalAlignment="Top" Margin="15,140,0,0" Width="110"/>
         <TextBlock HorizontalAlignment="Left" Margin="15,185,0,0" TextWrapping="Wrap" Text="Datum rođenja :" VerticalAlignment="Top" Width="110"/>
         <TextBlock HorizontalAlignment="Left" Margin="15,230,0,0" TextWrapping="Wrap" Text="Spol :" VerticalAlignment="Top" Width="110"/>
-        <TextBlock HorizontalAlignment="Left" Margin="15,275,0,0" TextWrapping="Wrap" Text="Slika :" VerticalAlignment="Top" Width="110"/>
         <TextBlock HorizontalAlignment="Left" Margin="15,385,0,0" TextWrapping="Wrap" Text="Username :" VerticalAlignment="Top" Width="110"/>
         <TextBlock HorizontalAlignment="Left" Margin="15,430,0,0" TextWrapping="Wrap" Text="Password :" VerticalAlignment="Top" Width="110"/>
-        <TextBox x:Name="textIme" Text="{x:Bind viewModel.ime}"  HorizontalAlignment="Left" Margin="145,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180"/>
-        <TextBox x:Name="textPrezime"  Text="{x:Bind viewModel.prezime}" HorizontalAlignment="Left" Margin="145,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
-        <TextBox HorizontalAlignment="Left" Text="{x:Bind viewModel.username}" Margin="145,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
-        <TextBox HorizontalAlignment="Left" Margin="145,425,0,0" TextWrapping="Wrap" Text="{x:Bind viewModel.password}" VerticalAlignment="Top" Width="180"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="150,270,0,0" VerticalAlignment="Top" Width="100"/>
-        <RadioButton x:Name="radioMusko" Command="{x:Bind viewModel.muskoJe}" Content="Musko" HorizontalAlignment="Left" Margin="150,225,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="radioZensko" Command="{x:Bind viewModel.zenskoJe}" Content="Zensko" HorizontalAlignment="Left" Margin="235,225,0,0" VerticalAlignment="Top"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="255,300,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="buttonRegistruj" Content="Registruj se" Command="{Binding Path=viewModel.regBtn}" HorizontalAlignment="Left" Margin="125,525,0,0" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Date="{Binding Path=viewModel.datumRodjenja, Converter={StaticResource theDateConverter}}"  Margin="145,180,-81,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="textIme" Text="{Binding Path=ime, Mode=TwoWay}"  HorizontalAlignment="Left" Margin="145,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="textPrezime"  Text="{Binding Path=prezime , Mode=TwoWay}" HorizontalAlignment="Left" Margin="145,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=username, Mode=TwoWay}" Margin="145,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBox HorizontalAlignment="Left" Margin="145,425,0,0" TextWrapping="Wrap" Text="{Binding Path=password, Mode=TwoWay}" VerticalAlignment="Top" Width="180"/>
+        <RadioButton x:Name="radioMusko" Command="{Binding Path=muskoJe, Mode=TwoWay}" Content="Musko" HorizontalAlignment="Left" Margin="150,225,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioZensko" Command="{Binding Path=zenskoJe, Mode=TwoWay}" Content="Zensko" HorizontalAlignment="Left" Margin="235,225,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="buttonRegistruj" Content="Registruj se" Command="{Binding Path=regBtn, Mode=TwoWay}" HorizontalAlignment="Left" Margin="125,525,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Date="{Binding Path=datumRodjenja, Converter={StaticResource theDateConverter}, Mode=TwoWay}"  Margin="145,180,-81,0" VerticalAlignment="Top" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="36,22,0,0" TextWrapping="Wrap" Text="Registracija Online Kupca" VerticalAlignment="Top" FontSize="25" Width="314"/>
 
     </Grid>
 </Page>
