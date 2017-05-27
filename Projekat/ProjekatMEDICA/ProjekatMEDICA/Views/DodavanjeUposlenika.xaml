@@ -13,27 +13,21 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock HorizontalAlignment="Left" Margin="21,23,0,0" TextWrapping="Wrap" Text="Dodavanje Uposlenika" VerticalAlignment="Top" FontSize="30"/>
         <TextBlock HorizontalAlignment="Left" Margin="21,92,0,0" TextWrapping="Wrap" Text="Ime" VerticalAlignment="Top" Height="32"/>
-        <TextBox Text="{Binding Path=ime}" x:Name="textBoxIme" HorizontalAlignment="Left" Margin="159,92,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296"/>
-        <TextBox Text="{Binding Path=prezime}" x:Name="textBoxPrezime" HorizontalAlignment="Left" Margin="159,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
-        <TextBlock HorizontalAlignment="Left" Margin="21,141,0,0" TextWrapping="Wrap" Text="Prezime" VerticalAlignment="Top" Height="32"/>
-        <TextBlock HorizontalAlignment="Left" Margin="21,194,0,0" TextWrapping="Wrap" Text="Datum Rodjenja" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged" Height="30"/>
-        <DatePicker Date="{Binding Path=datumRodjenja, Converter={StaticResource theDateConverter}}" x:Name="datePickerDatum" HorizontalAlignment="Left" Margin="159,192,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="21,371,0,0" TextWrapping="Wrap" Text="JMBG" VerticalAlignment="Top" Height="32"/>
-        <TextBox Text="{Binding Path=maticni}" x:Name="textBoxJMBG" HorizontalAlignment="Left" Margin="159,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" InputScope="Digits"/>
-        <TextBlock HorizontalAlignment="Left" Margin="21,425,0,0" TextWrapping="Wrap" Text="Strucna Sprema" VerticalAlignment="Top" Height="32"/>
-        <ComboBox  SelectedValue="{Binding Path=strucnSprema}" x:Name="comboBoxStrucnaSprema" HorizontalAlignment="Left" Margin="159,425,0,0" VerticalAlignment="Top" Width="296"></ComboBox>
-        <TextBlock HorizontalAlignment="Left" Margin="21,486,0,0" TextWrapping="Wrap" Text="Vrsta" VerticalAlignment="Top" Height="26"/>
-        <RadioButton x:Name="radioButtonMusko" Command="{Binding Path=prodavac}" Content="Prodavac" HorizontalAlignment="Left" Margin="159,480,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Dostavljac" Command="{Binding Path=dostavljac}" Name="radioButtonZensko" HorizontalAlignment="Left" Margin="335,480,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="21,549,0,0" TextWrapping="Wrap" Text="Komentar" VerticalAlignment="Top" Height="32"/>
-        <TextBox x:Name="textBoxKomentar" Text="{Binding Path=komentar}"  Margin="182,549,22,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="103" Width="296"/>
-        <Button x:Name="buttonUnesi" Command="{Binding Path=regBtn}" Content="Unesi" HorizontalAlignment="Left" Margin="185,690,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="23,277,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding Path=username}" Margin="159,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
-        <TextBlock HorizontalAlignment="Left" Margin="24,326,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding Path=password}" Margin="159,318,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296"/>
-        <DatePicker HorizontalAlignment="Left" Date="{Binding Path=datumZaposlenja, Converter={StaticResource theDateConverter}}" Margin="159,236,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="24,238,0,0" TextWrapping="Wrap" Text="DatumZaposlenja" VerticalAlignment="Top"/>
+        <TextBox Text="{x:Bind viewModel.ime}" x:Name="textBoxIme" HorizontalAlignment="Left" Margin="159,92,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296"/>
+        <TextBox Text="{x:Bind viewModel.prezime}" x:Name="textBoxPrezime" HorizontalAlignment="Left" Margin="159,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,157,0,0" TextWrapping="Wrap" Text="Prezime" VerticalAlignment="Top" Height="32"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,226,0,0" TextWrapping="Wrap" Text="Datum Rodjenja" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged" Height="30"/>
+        <DatePicker Date="{Binding Path=viewModel.datumRodjenja, Converter={StaticResource theDateConverter}}" x:Name="datePickerDatum" HorizontalAlignment="Left" Margin="159,224,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,287,0,0" TextWrapping="Wrap" Text="JMBG" VerticalAlignment="Top" Height="32"/>
+        <TextBox Text="{x:Bind viewModel.maticni}" x:Name="textBoxJMBG" HorizontalAlignment="Left" Margin="159,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" InputScope="Digits"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,353,0,0" TextWrapping="Wrap" Text="Strucna Sprema" VerticalAlignment="Top" Height="32"/>
+        <ComboBox  SelectedValue="{x:Bind viewModel.strucnSprema}" x:Name="comboBoxStrucnaSprema" HorizontalAlignment="Left" Margin="159,353,0,0" VerticalAlignment="Top" Width="296"></ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="21,421,0,0" TextWrapping="Wrap" Text="Spol" VerticalAlignment="Top" Height="26"/>
+        <RadioButton x:Name="radioButtonMusko" Command="{x:Bind viewModel.muskoJe}" Content="Musko" HorizontalAlignment="Left" Margin="159,415,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Zensko" Command="{x:Bind viewModel.zenskoJe}" Name="radioButtonZensko" HorizontalAlignment="Left" Margin="335,415,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,477,0,0" TextWrapping="Wrap" Text="Komentar" VerticalAlignment="Top" Height="32"/>
+        <TextBox x:Name="textBoxKomentar" Text="{Binding Path=komentar}"  Margin="159,477,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="103" Width="296"/>
+        <Button x:Name="buttonUnesi" Command="{Binding Path=viewModel.regBtn}" Content="Unesi" HorizontalAlignment="Left" Margin="185,618,0,0" VerticalAlignment="Top" Width="120"/>
 
 
     </Grid>
