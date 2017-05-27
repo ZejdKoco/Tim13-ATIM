@@ -20,7 +20,6 @@ namespace ProjekatMEDICA.ViewModels
         string id;
         string opis;
         string proizvodjac;
-        byte[] slika;
         double cijena;
         string komentar;
         int kolicina;
@@ -31,7 +30,6 @@ namespace ProjekatMEDICA.ViewModels
         public string Id { get => id; set => id = value; }
         public string Opis { get => opis; set => opis = value; }
         public string Proizvodjac { get => proizvodjac; set => proizvodjac = value; }
-        public byte[] Slika { get => slika; set => slika = value; }
         public double Cijena { get => cijena; set => cijena = value; }
         public INavigationService NavigationService { get => navigationService; set => navigationService = value; }
         public string Komentar { get => komentar; set => komentar = value; }
@@ -70,14 +68,95 @@ namespace ProjekatMEDICA.ViewModels
             opis = proizvod.Opis;
             proizvodjac = proizvod.Proizvodjac;
             komentar = proizvod.Komentar;
-            slika = proizvod.Slika;
             cijena = proizvod.Cijena;
             kolicina = proizvod.Kolicina;
         }
         public async void spremiIzmjene(object parametar)
         {
-            var dialog1 = new MessageDialog("Jos nista");
-            await dialog1.ShowAsync();
+            int indikator = 0;
+            if (Naziv != Proizvod.Naziv && Naziv != "")
+            {
+                for (int i = 0; i < (DefaultPodaci.dajSveProizvode()).Count; i++)
+                {
+                    if ((DefaultPodaci.dajSveProizvode())[i].Id == Id)
+                    {
+                        (DefaultPodaci.dajSveProizvode())[i].Naziv = Naziv;
+                        break;
+                    }
+                }
+            }
+            else if(Naziv == "") indikator = -1;
+            if (Opis != Proizvod.Opis && Opis != "")
+            {
+                for (int i = 0; i < (DefaultPodaci.dajSveProizvode()).Count; i++)
+                {
+                    if ((DefaultPodaci.dajSveProizvode())[i].Id == Id)
+                    {
+                        (DefaultPodaci.dajSveProizvode())[i].Opis = Opis;
+                        break;
+                    }
+                }
+            }
+            else if (Opis == "") indikator = -1;
+            if (Proizvodjac != Proizvod.Proizvodjac && Proizvodjac != "")
+            {
+                for (int i = 0; i < (DefaultPodaci.dajSveProizvode()).Count; i++)
+                {
+                    if ((DefaultPodaci.dajSveProizvode())[i].Id == Id)
+                    {
+                        (DefaultPodaci.dajSveProizvode())[i].Proizvodjac = Proizvodjac;
+                        break;
+                    }
+                }
+            }
+            else if (Proizvodjac == "") indikator = -1;
+            if (Cijena != Proizvod.Cijena && Cijena > 0)
+            {
+                for (int i = 0; i < (DefaultPodaci.dajSveProizvode()).Count; i++)
+                {
+                    if ((DefaultPodaci.dajSveProizvode())[i].Id == Id)
+                    {
+                        (DefaultPodaci.dajSveProizvode())[i].Cijena = Cijena;
+                        break;
+                    }
+                }
+            }
+            else if (Cijena <= 0) indikator = -1;
+            if (Komentar != Proizvod.Komentar && Komentar != "")
+            {
+                for (int i = 0; i < (DefaultPodaci.dajSveProizvode()).Count; i++)
+                {
+                    if ((DefaultPodaci.dajSveProizvode())[i].Id == Id)
+                    {
+                        (DefaultPodaci.dajSveProizvode())[i].Komentar = Komentar;
+                        break;
+                    }
+                }
+            }
+            else if (Komentar == "") indikator = -1;
+            if (Kolicina != Proizvod.Kolicina && Kolicina >= 0)
+            {
+                for (int i = 0; i < (DefaultPodaci.dajSveProizvode()).Count; i++)
+                {
+                    if ((DefaultPodaci.dajSveProizvode())[i].Id == Id)
+                    {
+                        (DefaultPodaci.dajSveProizvode())[i].Kolicina = Kolicina;
+                        break;
+                    }
+                }
+            }
+            else if (Kolicina < 0) indikator = -1;
+            if (indikator == -1)
+            {
+                var dialog1 = new MessageDialog("Neispravni podaci");
+                await dialog1.ShowAsync();
+
+            }
+            else
+            {
+                var dialog1 = new MessageDialog("Izmjene su sacuvane!");
+                await dialog1.ShowAsync();
+            }
         }
     }
 }
