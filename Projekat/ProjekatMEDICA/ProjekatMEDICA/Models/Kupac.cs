@@ -17,5 +17,7 @@ namespace ProjekatMEDICA.Models
         {
             KupljeniProizvodi = new ObservableCollection<StavkaNarudzbe>();
         }
+
+        
     }
 }

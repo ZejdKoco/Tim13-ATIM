@@ -40,6 +40,20 @@ namespace ProjekatMEDICA.Models
             }
         };
 
+        public static List<Kupac> _nepotvrdjeniKupci = new List<Kupac>()
+        {
+            new OnlineKupac()
+            {
+                Ime = "Nepotvrdjeni",
+                Prezime = "Nepotvrdjeni",
+                Spol = "zensko",
+                DatumRodjenja = DateTime.Now,
+                Username = "amila2",
+                Password = "amila2"
+            }
+        };
+        
+
         public static IList<Kupac> dajSveKupce()
         {
             return _kupci;

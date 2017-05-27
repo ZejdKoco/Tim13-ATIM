@@ -22,6 +22,7 @@ namespace ProjekatMEDICA.ViewModels
         public string Sifra { get => sifra; set => sifra = value; }
         public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
         public ICommand PotvrdiBtn { get => potvrdiBtn; set => potvrdiBtn = value; }
+        public ICommand registrujSe { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
@@ -36,11 +37,22 @@ namespace ProjekatMEDICA.ViewModels
             navigationService = new NavigationService();
             kupac = new OnlineKupac();
             potvrdiBtn = new RelayCommand<object>(potvrdi);
+            registrujSe = new RelayCommand<object>(registr, mozeLi);
         }
 
         private void potvrdi(object obj)
         {
             navigationService.Navigate(typeof(NarucivanjeProizvoda));
+        }
+
+        public bool mozeLi(object o)
+        {
+            return true;
+        }
+
+        public void registr(object o)
+        {
+            navigationService.Navigate(typeof(RegistracijaOnlineKupca));
         }
     }
 }

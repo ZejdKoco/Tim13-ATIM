@@ -7,13 +7,15 @@ using System.Windows.Input;
 using Windows.UI.Popups;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
+using ProjekatMEDICA.Helper;
+using ProjekatMEDICA.Models;
 
 namespace ProjekatMEDICA.ViewModels
 {
     public class RegistracijaViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public INavigate registr;
+        INavigationService navigationService;
 
         protected void OnPropertyChanged(string propertyName)
         {
@@ -33,31 +35,82 @@ namespace ProjekatMEDICA.ViewModels
         public ICommand zenskoJe { get; set; }
         public ICommand regBtn { get; set; }
 
-        public void pozoviRegistracija()
+        public RegistracijaViewModel()
         {
-            registr.Navigate(typeof(RegistracijaOnlineKupca));
+            navigationService = new NavigationService();
+            regBtn = new RelayCommand<Object>(registrujSe, mozeLi);
+            muskoJe = new RelayCommand<Object>(musko);
+            zenskoJe = new RelayCommand<Object>(zensko);
         }
+
+        public void musko(Object o)
+        {
+            spol = "Musko";
+        }
+
+        public void zensko(Object o)
+        {
+            spol = "Zensko";
+        }
+
+        public bool mozeLi(Object o)
+        {
+            return true;
+        }
+        
 
         public bool sveUredu()
         {
-            if (ime == "") return false;
-            if (prezime == "") return false;
-            if (username == "") return false;
-            if (password == "") return false;
+            if (ime == null) return false;
+            if (prezime == null) return false;
+            if (username == null) return false;
+            if (password == null) return false;
+
+            return true;
+        }
+
+        public bool slobodanUsername(string user)
+        {
+            foreach(OnlineKupac k in DefaultPodaci._kupci)
+            {
+                if (k.Username == user) return false;
+            }
+
+            foreach(OnlineKupac k in DefaultPodaci._nepotvrdjeniKupci)
+            {
+                if (k.Username == user) return false;
+            }
 
             return true;
         }
 
         public async void registrujSe(Object o)
         {
-            if (sveUredu())
+            if (!sveUredu())
             {
-                
+                var dialog = new MessageDialog("Nisu unesena sva polja.");
+                await dialog.ShowAsync();
             }
-            var dialog = new MessageDialog("Uspjesno ste registrovani");
-            await dialog.ShowAsync();
-            // DORADITI, VALJDA S BAZOM POVEZATI
-            // NEYY ://
+            else
+            {
+                if (slobodanUsername(username))
+                {
+                    OnlineKupac kup = new OnlineKupac(ime, prezime, spol, datumRodjenja, username, password);
+                    DefaultPodaci._nepotvrdjeniKupci.Add(kup);
+
+                    int br = DefaultPodaci._nepotvrdjeniKupci.Count;
+
+                    var dialog = new MessageDialog(br.ToString());
+                    await dialog.ShowAsync();
+                }
+                else
+                {
+                    var dialog = new MessageDialog("Username je vec zauzet");
+                    await dialog.ShowAsync();
+                }
+            }
+
+
         }
 
     }
