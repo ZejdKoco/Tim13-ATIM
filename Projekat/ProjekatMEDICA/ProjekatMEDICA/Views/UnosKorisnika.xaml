@@ -10,7 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button Content="Odobri" Command="{Binding Path=odobri}" HorizontalAlignment="Left" Margin="135,545,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="58,97,0,0" VerticalAlignment="Top" Width="245" Height="28"
-                  ItemsSource="{Binding Path=kupcii}" 
+                  ItemsSource="{Binding Path=kupcii, Mode=TwoWay}" 
                   DisplayMemberPath="Ime" SelectedValue="{Binding Path=odabraniKupac, Mode=TwoWay}" Grid.Row="1" Grid.Column ="1"
                   />
 
