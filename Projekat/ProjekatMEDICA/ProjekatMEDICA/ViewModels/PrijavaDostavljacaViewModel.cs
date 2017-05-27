@@ -1,5 +1,6 @@
 ﻿using ProjekatMEDICA.Helper;
 using ProjekatMEDICA.Models;
+using ProjekatMEDICA.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace ProjekatMEDICA.ViewModels
         }
         public void prijavaDostavljaca(object parameter)
         {
-            else navigationService.Navigate(typeof(DostavaProizvoda), new DostavaProizvodaViewModel(this));
+          // navigationService.Navigate(typeof(PrijavaDostavljaca), new DostavaProizvodaViewModel(this));
         }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
