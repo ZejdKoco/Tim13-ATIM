@@ -53,6 +53,7 @@ namespace ProjekatMEDICA
                 var proizvod = (e.AddedItems[0] as Proizvod);
                 if (proizvod != null) viewModel.odabrani = proizvod;
             }
-        }
+        }
+
     }
 }

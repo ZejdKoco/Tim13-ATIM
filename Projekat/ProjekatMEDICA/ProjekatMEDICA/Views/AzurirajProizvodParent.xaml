@@ -19,8 +19,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="{x:Bind Naziv}" HorizontalAlignment="Left"/>
-                <TextBlock Text="{x:Bind Id}" HorizontalAlignment="Right"/>
+                <TextBlock Text="{x:Bind Naziv, Mode=TwoWay}" HorizontalAlignment="Left"/>
+                <TextBlock Text="{x:Bind Id, Mode=TwoWay}" HorizontalAlignment="Right"/>
 
             </Grid>
         </DataTemplate>
@@ -38,8 +38,8 @@
         </Grid.Resources>
         <RelativePanel>
             <TextBlock Name="Id" Text="Naziv ili ID:" FontSize="18" FontWeight="Normal" Margin="60,50,0,10"></TextBlock>
-            <TextBox Name="Naziv" Text ="{x:Bind viewModel.naziv, Mode=TwoWay}" MinWidth="200" RelativePanel.RightOf="Id" Margin="10,50,0,10"></TextBox>
-            <Button Name="Pretraga" Command="{x:Bind viewModel.pretragaBtn}" Content="Pretraga" FontSize="18" FontWeight="Normal" RelativePanel.RightOf="Id" Margin="10,120,0,10"></Button>
+            <TextBox Name="Naziv" Text ="{x:Bind viewModel.Naziv, Mode=TwoWay}" MinWidth="200" RelativePanel.RightOf="Id" Margin="10,50,0,10"></TextBox>
+            <Button Name="Pretraga" Command="{x:Bind viewModel.pretragaBtn, Mode=TwoWay}" Content="Pretraga" FontSize="18" FontWeight="Normal" RelativePanel.RightOf="Id" Margin="10,120,0,10"></Button>
 
 
 

@@ -22,18 +22,40 @@ namespace ProjekatMEDICA.ViewModels
         string komentar;
         int kolicina;
         ICommand dodajBtn;
-        ICommand dodajSlikuBtn;
         ICommand dodajBarCodeBtn;
         private INavigationService navigationService;
         public string Naziv { get => naziv; set => naziv = value; }
         public string Id { get => id; set => id = value; }
         public string Opis { get => opis; set => opis = value; }
         public string Proizvodjac { get => proizvodjac; set => proizvodjac = value; }
-        public double Cijena { get => cijena; set => cijena = value; }
+        public double Cijena
+        {
+            get => cijena; set
+            {
+                cijena = value;
+                OnPropertyChanged(cijena.ToString());
+            }
+        }
         public INavigationService NavigationService { get => navigationService; set => navigationService = value; }
-        public string Komentar { get => komentar; set => komentar = value; }
+        public string Komentar
+        {
+            get => komentar;
+            set
+            {
+                komentar = value;
+                OnPropertyChanged(komentar);
+            }
+        }
         public Proizvod Proizvod { get => proizvod; set => proizvod = value; }
-        public int Kolicina { get => kolicina; set => kolicina = value; }
+        public int Kolicina
+        {
+            get => kolicina;
+            set
+            {
+                kolicina = value;
+                OnPropertyChanged(kolicina.ToString());
+            }
+        }
         public ICommand DodajBarCodeBtn { get => dodajBarCodeBtn; set => dodajBarCodeBtn = value; }
         public ICommand DodajBtn { get => this.dodajBtn; set => this.dodajBtn = value; }
 
@@ -79,8 +101,8 @@ namespace ProjekatMEDICA.ViewModels
                 Opis = "";
                 Proizvodjac = "";
                 Cijena = 0;
-                Komentar = "";
                 Kolicina = 0;
+                Komentar = "";
                 var dialog1 = new MessageDialog("Uspjesno dodan proizvod");
                 await dialog1.ShowAsync();
             }

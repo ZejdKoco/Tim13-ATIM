@@ -15,7 +15,7 @@ namespace ProjekatMEDICA.ViewModels
 {
     class AzuriranjeProizvodaParentViewModel : INotifyPropertyChanged
     {
-        public string naziv { get; set; }
+        private string naziv;
         public ICommand pretragaBtn { get; set; }
         public ObservableCollection<Proizvod> proizvodi { get; set; }
         public ICommand potvrdiBtn { get; set; }
@@ -23,6 +23,19 @@ namespace ProjekatMEDICA.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
         public INavigationService NavigationService { get; set; }
+        public string Naziv
+        {
+            get => naziv;
+            set
+            {
+                naziv = value;
+                if(naziv == "")
+                {
+                    proizvodi.Clear();
+                    Proizvodi();
+                }
+            }
+        }
         protected void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -48,14 +61,15 @@ namespace ProjekatMEDICA.ViewModels
             return true;
         }
 
-        private async void pretragaProizvoda(object obj)
+        private void pretragaProizvoda(object obj)
         {
-            Proizvod p = (Proizvod)DefaultPodaci.nadjiProizvod(naziv);
-            if (p == null)
+            Proizvod p = (Proizvod)DefaultPodaci.nadjiProizvod(Naziv);
+            if (p != null)
             {
-                var dialog1 = new MessageDialog("Neispravni podaci!");
-                await dialog1.ShowAsync();
-            }
+                proizvodi.Clear();
+                proizvodi.Add(p);
+            }  
+
             // NavigationService.Navigate(typeof(AzuriranjeProizvodaChild), new AzuriranjeProizvodaChildViewModel(this));
         }
 
@@ -82,8 +96,6 @@ namespace ProjekatMEDICA.ViewModels
             {
                 proizvodi.Add(new Proizvod(p.Naziv, p.Id, p.Proizvodjac, p.Opis, p.Cijena, p.Kolicina, p.Komentar));
             }
-            proizvodi.Add(new Proizvod("amila", "5", "japalak", "napokon", 0.5, 1, "ccc"));
-
         }
     }
 }

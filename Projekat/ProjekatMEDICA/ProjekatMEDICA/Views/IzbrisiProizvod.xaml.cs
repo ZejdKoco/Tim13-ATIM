@@ -1,4 +1,5 @@
-﻿using ProjekatMEDICA.ViewModels;
+﻿using ProjekatMEDICA.Models;
+using ProjekatMEDICA.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,7 +31,7 @@ namespace ProjekatMEDICA
             this.InitializeComponent();
             //MenadzerForm otvara dodavanjeProizvoda
             //stavila da se vidi back u slucaju da menadzer slucajno klikne pogresan button i sl.
-            DataContext = new IzbrisiProizvodViewModel();
+            viewModel = new IzbrisiProizvodViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
@@ -42,6 +43,14 @@ namespace ProjekatMEDICA
             {
                 Frame.GoBack();
                 e.Handled = true;
+            }
+        }
+        private void Proizvod_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                var proizvod = (e.AddedItems[0] as Proizvod);
+                if (proizvod != null) viewModel.Odabrani = proizvod;
             }
         }
     }
