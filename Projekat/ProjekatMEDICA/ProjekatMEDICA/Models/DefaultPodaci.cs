@@ -54,9 +54,6 @@ namespace ProjekatMEDICA.Models
 
         public DefaultPodaci()
         {
-            /*Prodavac p = new Prodavac("Prodavac", "Prodavac", 2, "prod", "prod", DateTime.Now, DateTime.Now);
-            p.dodajProdaniProizvod(_proizvodi[0]);
-            _uposlenici.Add(p);*/
         }
 
         public static IList<Uposlenik> dajSveUposlenike()
@@ -76,7 +73,7 @@ namespace ProjekatMEDICA.Models
         {
             //string naz, string id, string proizv, string opis, double cijena, string komentar
             new Proizvod("Aspirin", "1", "Proizvodjac", "Opis", 2.5, "Komentar"),
-            new Proizvod("Kafetin", "2", "Proizvodjac", "Opis", 3, "Komentar")
+            new Proizvod("Kafetin", "2", "Proizvodjac", "Opis", 12, "Komentar")
         };
 
         public static ObservableCollection<Proizvod> dajSveProizvode()

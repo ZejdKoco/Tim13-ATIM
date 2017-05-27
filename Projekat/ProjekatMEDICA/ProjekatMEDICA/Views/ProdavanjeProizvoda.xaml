@@ -14,19 +14,18 @@
         <TextBlock HorizontalAlignment="Left" Margin="20,172,0,0" TextWrapping="Wrap" Text="Količina :" VerticalAlignment="Top" Width="100"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,258,0,0" TextWrapping="Wrap" Text="Kartica :" VerticalAlignment="Top" Width="100"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,312,0,0" TextWrapping="Wrap" Text="Ime i prezime :" VerticalAlignment="Top" Width="100"/>
-        <TextBlock HorizontalAlignment="Left" Margin="20,404,0,0" TextWrapping="Wrap" Text="Za platiti :" VerticalAlignment="Top" Width="100"/>
         <RadioButton x:Name="radioDA" Content="DA" HorizontalAlignment="Left" Margin="132,252,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="radioNE" Content="NE" HorizontalAlignment="Left" Margin="210,252,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="135,115,0,0"
                   VerticalAlignment="Top" ItemsSource="{Binding Path=proizvodii}" 
                   DisplayMemberPath="Naziv" SelectedValue="{Binding Path=odabraniProizvod, Mode=TwoWay}"
-                  Width="150" 
+                  Width="150"  Grid.Row="1" Grid.Column ="1"
                   ></ComboBox>
-        <TextBox HorizontalAlignment="Left" Text="{Binding Path=kolicina}" Margin="135,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding Path=kupac}" Margin="135,307,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding Path=zaPlatiti}" Margin="135,397,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
-        <Button Content="Prodaj" Command="{Binding Path=prodaj}" HorizontalAlignment="Left" Margin="108,481,0,0" VerticalAlignment="Top" Width="132"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=kolicina, Mode=TwoWay}" Margin="135,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=kupac, Mode=TwoWay}" Margin="135,307,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
+        <Button Content="Prodaj" Command="{Binding Path=prodaj, Mode=TwoWay}" HorizontalAlignment="Left" Margin="163,421,0,0" VerticalAlignment="Top" Width="132"/>
         <Button Content="Odjavi se" Command="{Binding Path=odjava}" HorizontalAlignment="Left" Margin="265,25,0,0" VerticalAlignment="Top"/>
+        <Button Content="Za platiti " Command="{Binding Path=buttonZaPlatiti, Mode=TwoWay}" HorizontalAlignment="Left" Margin="20,422,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

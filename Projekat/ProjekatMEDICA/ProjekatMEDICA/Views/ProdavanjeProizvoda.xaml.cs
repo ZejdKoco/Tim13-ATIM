@@ -23,11 +23,12 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class ProdavanjeProizvoda : Page
     {
-        ProdavanjeProizvodaViewModel viewModel;
+        //ProdavanjeProizvodaViewModel viewModel;
 
         public ProdavanjeProizvoda()
         {
             this.InitializeComponent();
+
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
