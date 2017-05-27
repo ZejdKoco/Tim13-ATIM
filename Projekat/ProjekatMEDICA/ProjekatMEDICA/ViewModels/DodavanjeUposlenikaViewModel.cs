@@ -22,8 +22,6 @@ namespace ProjekatMEDICA.ViewModels
         public string maticni { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public string strucnSprema { get; set; }
-        public string komentar { get; set; }
         public bool prodavacJe { get; set; }
         public bool dostavljacJe { get; set; }
         public ICommand regBtn { get; set; }
@@ -70,7 +68,7 @@ namespace ProjekatMEDICA.ViewModels
             /*Spasavanje unesenih postavki u defaultnipodaci._uposlenici*/
             if (prodavacJe) DefaultPodaci._uposlenici.Add(prodavacClass);
             if (dostavljacJe) DefaultPodaci._uposlenici.Add(dostavljacClass);
-            NavigationService.Navigate(typeof(MenadzerForm));
+            //NavigationService.Navigate(typeof(MenadzerForm));
         }
         
     }

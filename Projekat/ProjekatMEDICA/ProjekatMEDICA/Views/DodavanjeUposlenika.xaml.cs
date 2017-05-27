@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ProjekatMEDICA.ViewModels;
 using Windows.UI.Core;
+using ProjekatMEDICA.Models;
 
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -55,6 +56,11 @@ namespace ProjekatMEDICA
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void buttonUnesi_Click(object sender, RoutedEventArgs e)
+        {
+            text.Text = DefaultPodaci._uposlenici.Count.ToString();
         }
     }
 }
