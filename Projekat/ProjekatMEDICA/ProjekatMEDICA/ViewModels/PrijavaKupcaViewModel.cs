@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace ProjekatMEDICA.ViewModels
 {
@@ -40,9 +41,15 @@ namespace ProjekatMEDICA.ViewModels
             registrujSe = new RelayCommand<object>(registr, mozeLi);
         }
 
-        private void potvrdi(object obj)
+        private async void potvrdi(object obj)
         {
-            navigationService.Navigate(typeof(NarucivanjeProizvoda));
+            kupac = (OnlineKupac)DefaultPodaci.nadjiKupca(sifra, korisnickoIme);
+            if (kupac == null)
+            {
+                var dialog1 = new MessageDialog("Neispravni podaci!");
+                await dialog1.ShowAsync();
+            }
+            else navigationService.Navigate(typeof(NarucivanjeProizvoda), new NarucivanjeProizvodaViewModel(this));
         }
 
         public bool mozeLi(object o)

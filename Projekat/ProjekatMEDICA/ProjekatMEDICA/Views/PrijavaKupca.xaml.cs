@@ -28,7 +28,7 @@ namespace ProjekatMEDICA
         public PrijavaKupca()
         {
             this.InitializeComponent();
-            DataContext = new PrijavaKupcaViewModel();
+            viewModel = new PrijavaKupcaViewModel();
 
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;

@@ -9,7 +9,7 @@ namespace ProjekatMEDICA.Models
 {
     public class DefaultPodaci
     {
-        public static List<Kupac> _kupci = new List<Kupac>()
+        public static List<OnlineKupac> _kupci = new List<OnlineKupac>()
         {
             new OnlineKupac() //string ime,string prez, string spol, DateTime datRodj, string usern, string pw
             {
@@ -54,7 +54,7 @@ namespace ProjekatMEDICA.Models
         };
         
 
-        public static IList<Kupac> dajSveKupce()
+        public static IList<OnlineKupac> dajSveKupce()
         {
             return _kupci;
         }
@@ -103,6 +103,12 @@ namespace ProjekatMEDICA.Models
         {
             return _proizvodi.Where(i => i.Naziv.Equals(id) || i.Id.Equals(id)).FirstOrDefault();
         }
+
+        public static Kupac nadjiKupca(string username, string password)
+        {
+            return _kupci.Where(u => u.Username.Equals(username) && u.Password.Equals(password)).FirstOrDefault();
+        }
     }
+
 }
 

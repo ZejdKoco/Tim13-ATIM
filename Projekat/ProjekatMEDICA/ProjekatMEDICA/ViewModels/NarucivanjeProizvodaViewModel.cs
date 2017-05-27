@@ -11,6 +11,8 @@ namespace ProjekatMEDICA.ViewModels
 {
     class NarucivanjeProizvodaViewModel
     {
+        private PrijavaKupcaViewModel prijavaKupcaViewModel;
+
         public ICommand racun { get; set; }
         public ICommand kupi { get; set; }
         public ICommand trazi { get; set; }
@@ -22,6 +24,11 @@ namespace ProjekatMEDICA.ViewModels
             racun = new RelayCommand<object>(prikaziRacun, jeLiMogucePrikazati);
             trazi = new RelayCommand<object>(prikaziListView, jeLiMoguceLV);
             kupi = new RelayCommand<object>(kupiProizvod, jeLiMoguceKupiti);
+        }
+
+        public NarucivanjeProizvodaViewModel(PrijavaKupcaViewModel prijavaKupcaViewModel) //treba kod prijave
+        {
+            this.prijavaKupcaViewModel = prijavaKupcaViewModel;
         }
 
         public bool jeLiMogucePrikazati(Object o)
