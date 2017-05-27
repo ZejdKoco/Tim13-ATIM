@@ -102,6 +102,7 @@
     <Compile Include="Models\Prodavac.cs" />
     <Compile Include="ViewModels\BrisanjeKupcaViewModel.cs" />
     <Compile Include="ViewModels\BrisanjeUposlenikaViewModel.cs" />
+    <Compile Include="ViewModels\PrijavaDostavljacaViewModel.cs" />
     <Compile Include="ViewModels\PrijavaProdavacaViewModel.cs" />
     <Compile Include="Views\AzurirajProizvodParent.xaml.cs">
       <DependentUpon>AzurirajProizvodParent.xaml</DependentUpon>
