@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace ProjekatMEDICA.ViewModels
 {
@@ -17,7 +18,6 @@ namespace ProjekatMEDICA.ViewModels
         string id;
         string opis;
         string proizvodjac;
-        byte[] slika;
         double cijena;
         string komentar;
         int kolicina;
@@ -29,13 +29,11 @@ namespace ProjekatMEDICA.ViewModels
         public string Id { get => id; set => id = value; }
         public string Opis { get => opis; set => opis = value; }
         public string Proizvodjac { get => proizvodjac; set => proizvodjac = value; }
-        public byte[] Slika { get => slika; set => slika = value; }
         public double Cijena { get => cijena; set => cijena = value; }
         public INavigationService NavigationService { get => navigationService; set => navigationService = value; }
         public string Komentar { get => komentar; set => komentar = value; }
         public Proizvod Proizvod { get => proizvod; set => proizvod = value; }
         public int Kolicina { get => kolicina; set => kolicina = value; }
-        public ICommand DodajSlikuBtn { get => dodajSlikuBtn; set => dodajSlikuBtn = value; }
         public ICommand DodajBarCodeBtn { get => dodajBarCodeBtn; set => dodajBarCodeBtn = value; }
         public ICommand DodajBtn { get => this.dodajBtn; set => this.dodajBtn = value; }
 
@@ -51,12 +49,41 @@ namespace ProjekatMEDICA.ViewModels
         {
             navigationService = new NavigationService();
             proizvod = new Proizvod();
-            dodajBtn = new RelayCommand<object>(dodaj);
+            dodajBtn = new RelayCommand<object>(dodaj, moze);
         }
 
-        private void dodaj(object obj)
+        private bool moze(object arg)
         {
-            
+           return true;
+        }
+
+        private async void dodaj(object obj)
+        {
+            int indikator = 0;
+            if (Naziv == "") indikator = -1;
+            if (Opis == "") indikator = -1;
+            if (Proizvodjac == "") indikator = -1;
+            if (Cijena <= 0) indikator = -1;
+            if (Komentar == "") indikator = -1;
+            if (Kolicina < 0) indikator = -1;
+            if (indikator == -1)
+            {
+                var dialog1 = new MessageDialog("Neispravni podaci");
+                await dialog1.ShowAsync();
+
+            }
+            else
+            {
+                DefaultPodaci._proizvodi.Add(new Proizvod(Naziv, id,Proizvodjac, opis, cijena, kolicina, komentar));
+                Naziv = "";
+                Opis = "";
+                Proizvodjac = "";
+                Cijena = 0;
+                Komentar = "";
+                Kolicina = 0;
+                var dialog1 = new MessageDialog("Uspjesno dodan proizvod");
+                await dialog1.ShowAsync();
+            }
         }
     }
 }

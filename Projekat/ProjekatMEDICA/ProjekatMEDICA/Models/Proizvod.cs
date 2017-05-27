@@ -10,7 +10,6 @@ namespace ProjekatMEDICA.Models
     public class Proizvod
     {
         string naziv, id, opis, proizvodjac;
-        byte[] slika;
         double cijena;
         string komentar;
         int kolicina;
@@ -44,7 +43,6 @@ namespace ProjekatMEDICA.Models
         public string Opis { get => opis; set => opis = value; }
         public string Proizvodjac { get => proizvodjac; set => proizvodjac = value; }
         public string Id { get => id; set => id = value; }
-        public byte[] Slika { get => slika; set => slika = value; }
         public double Cijena { get => cijena; set => cijena = value; }
         public string Komentar { get => komentar; set => komentar = value; }
         public int Kolicina { get => kolicina; set => kolicina = value; }

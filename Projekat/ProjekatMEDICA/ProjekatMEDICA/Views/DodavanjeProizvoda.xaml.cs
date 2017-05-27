@@ -31,7 +31,7 @@ namespace ProjekatMEDICA
             this.InitializeComponent();
             //MenadzerForm otvara dodavanjeProizvoda
             //stavila da se vidi back u slucaju da menadzer slucajno klikne pogresan button i sl.
-            DataContext = new DodajProizvodViewModel();
+            viewModel = new DodajProizvodViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
