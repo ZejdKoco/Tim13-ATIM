@@ -26,7 +26,7 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class DodavanjeUposlenika : Page
     {
-        DodavanjeUposlenikaViewModel viewModel; 
+        
         public DodavanjeUposlenika()
         {
             this.InitializeComponent();
@@ -35,6 +35,7 @@ namespace ProjekatMEDICA
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            DataContext = new DodavanjeUposlenikaViewModel();
         }
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)

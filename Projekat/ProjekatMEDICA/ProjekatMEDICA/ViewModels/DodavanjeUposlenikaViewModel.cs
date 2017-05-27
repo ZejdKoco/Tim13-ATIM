@@ -50,7 +50,7 @@ namespace ProjekatMEDICA.ViewModels
         {
             int id = 1;
             prodavacClass = new Prodavac(ime, prezime, id, username, password, datumRodjenja, datumZaposlenja);
-
+            dostavljacJe = false;
             prodavacJe = true;
         }
         public void potvrdiDostavljacJe(object parametar)
@@ -58,6 +58,7 @@ namespace ProjekatMEDICA.ViewModels
             int id = 1;
             dostavljacClass = new Dostavljac(ime, prezime, id, username, password, datumRodjenja, datumZaposlenja);
             dostavljacJe = true;
+            prodavacJe = false;
         }
         public void pozoviDodavanjeUposlenika()
         {
