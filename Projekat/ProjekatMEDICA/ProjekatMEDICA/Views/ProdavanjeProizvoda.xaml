@@ -14,8 +14,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="20,172,0,0" TextWrapping="Wrap" Text="Količina :" VerticalAlignment="Top" Width="100"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,258,0,0" TextWrapping="Wrap" Text="Kartica :" VerticalAlignment="Top" Width="100"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,312,0,0" TextWrapping="Wrap" Text="Ime i prezime :" VerticalAlignment="Top" Width="100"/>
-        <RadioButton x:Name="radioDA" Content="DA" HorizontalAlignment="Left" Margin="132,252,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="radioNE" Content="NE" HorizontalAlignment="Left" Margin="210,252,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioDA" Command="{Binding Path=imaKarticu, Mode=TwoWay}" Content="DA" HorizontalAlignment="Left" Margin="132,252,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioNE" Command="{Binding Path=nemaKarticu, Mode=TwoWay}" Content="NE" HorizontalAlignment="Left" Margin="210,252,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="135,115,0,0"
                   VerticalAlignment="Top" ItemsSource="{Binding Path=proizvodii}" 
                   DisplayMemberPath="Naziv" SelectedValue="{Binding Path=odabraniProizvod, Mode=TwoWay}"

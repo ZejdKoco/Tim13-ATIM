@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,13 @@ namespace ProjekatMEDICA.Models
 {
     public abstract class Kupac
     {
-        ICollection<StavkaNarudzbe> kupljeniProizvodi;
+        ObservableCollection<StavkaNarudzbe> kupljeniProizvodi;
 
-        public ICollection<StavkaNarudzbe> KupljeniProizvodi { get => kupljeniProizvodi; set => kupljeniProizvodi = value; }
+        public ObservableCollection<StavkaNarudzbe> KupljeniProizvodi { get => kupljeniProizvodi; set => kupljeniProizvodi = value; }
+
+        public Kupac()
+        {
+            KupljeniProizvodi = new ObservableCollection<StavkaNarudzbe>();
+        }
     }
 }

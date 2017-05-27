@@ -29,6 +29,17 @@ namespace ProjekatMEDICA.Models
             Cijena = cijena;
             Komentar = komentar;
         }
+
+        public Proizvod(Proizvod p)
+        {
+            Naziv = p.Naziv;
+            Id = p.Id;
+            Proizvodjac = p.Proizvodjac;
+            Opis = p.Opis;
+            Cijena = p.Cijena;
+            Komentar = p.Komentar;
+        }
+
         public string Naziv { get => naziv; set => naziv = value; }
         public string Opis { get => opis; set => opis = value; }
         public string Proizvodjac { get => proizvodjac; set => proizvodjac = value; }

@@ -47,12 +47,14 @@ namespace ProjekatMEDICA.ViewModels
             imaKarticu = new RelayCommand<Object>(imaKar, mozeLiOtvoriti);
             nemaKarticu = new RelayCommand<Object>(nemaKar, mozeLiOtvoriti);
             buttonZaPlatiti = new RelayCommand<Object>(zaPlatitiF, mozeLiOtvoriti);
+            
             proizv();
         }
 
         public async void zaPlatitiF(Object o)
         {
-            String s = odabraniProizvod.Cijena.ToString("00.00");
+            double cijena = odabraniProizvod.Cijena * Convert.ToInt16(kolicina);
+            String s = cijena.ToString("00.00");
             var dialog1 = new MessageDialog(s);
             await dialog1.ShowAsync();
         }
@@ -84,17 +86,68 @@ namespace ProjekatMEDICA.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private bool validirajKolicinuProizvoda()
-        {
-            if (kolicina == "1" || kolicina == "2" || kolicina == "3" || kolicina == "4" || kolicina == "5") return true; //nema bas smisla kupiti vise od pet istih proizvoda
-            else return false; // u slucaju da je bilo sta pogresno uneseno
-        }
+        
 
         public async void prodajf(Object o)
         {
+            if (kolicina=="1" || kolicina == "2" || kolicina == "3" || kolicina == "4" || kolicina == "5" )
+            {
+                if (!karticaIma)
+                {
+                    prodavac.dodajProdaniProizvod(new Proizvod(odabraniProizvod));
+                    var dialog1 = new MessageDialog("Uspjesno ste prodali proizvod: " + odabraniProizvod.Naziv);
+                    await dialog1.ShowAsync();
+                }
+                else
+                {
+                    string[] razdvoji = null;
+                    if (kupac != null || kupac.Length!=0 ) razdvoji=kupac.Split(' ');
+                    if (razdvoji.Length < 2 || razdvoji==null)
+                    {
+                        var dialog1 = new MessageDialog("Unesite puno ime i prezime kupca");
+                        await dialog1.ShowAsync();
+                    }
+                    else
+                    {
+                        string ime = razdvoji[0];
+                        string prezime = razdvoji[1];
+                        OnlineKupac kup = null;
+                        foreach (OnlineKupac k in DefaultPodaci._kupci)
+                        {
+                            if (k.Ime == ime && k.Prezime == prezime)
+                            {
+                                kup = k;
+                            }
+
+                        }
+                        if (kup != null)
+                        {
+                            prodavac.dodajProdaniProizvod(new Proizvod(odabraniProizvod));
+                            ObservableCollection<Proizvod> proizvodi = new ObservableCollection<Proizvod>();
+                            int kol = Convert.ToInt32(kolicina);
+                            for (int i = 0; i < kol; i++) proizvodi.Add(odabraniProizvod);
+                            kup.KupljeniProizvodi.Add(new StavkaNarudzbe(DateTime.Now, proizvodi, 2.4));
+                            var dialog1 = new MessageDialog("Uspjesna prodaja kupcu " + kup.Ime + " " + kup.Prezime);
+                            await dialog1.ShowAsync();
+                        }
+                        else
+                        {
+                            var dialog1 = new MessageDialog("Nije pronadjen kupac sa datim imenom i prezimenom.");
+                            await dialog1.ShowAsync();
+                        }
+                    }
+
+                }
+            }
+            else
+            {
+                var dialog1 = new MessageDialog("Dozvoljeni broj proizvoda za kupiti je: 1,2,3,4,5.");
+                await dialog1.ShowAsync();
+            }
             
+            /*
             var dialog1 = new MessageDialog(odabraniProizvod.Naziv);
-            await dialog1.ShowAsync();
+            await dialog1.ShowAsync();*/
         }
 
         public async void listaProdanih(Object o)
