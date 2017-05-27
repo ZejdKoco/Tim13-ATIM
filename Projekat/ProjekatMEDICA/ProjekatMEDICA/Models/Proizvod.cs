@@ -20,7 +20,7 @@ namespace ProjekatMEDICA.Models
 
         //barcode
 
-        public Proizvod(string naz, string id, string proizv, string opis, double cijena, string komentar)
+        public Proizvod(string naz, string id, string proizv, string opis, double cijena, int kolicina, string komentar)
         {
             Naziv = naz;
             Id = id;
@@ -28,8 +28,8 @@ namespace ProjekatMEDICA.Models
             Opis = opis;
             Cijena = cijena;
             Komentar = komentar;
+            Kolicina = kolicina;
         }
-
         public Proizvod(Proizvod p)
         {
             Naziv = p.Naziv;

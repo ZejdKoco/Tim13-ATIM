@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ProjekatMEDICA.ViewModels;
+using ProjekatMEDICA.Models;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -28,7 +29,8 @@ namespace ProjekatMEDICA
         public AzurirajProizvodParent()
         {
             this.InitializeComponent();
-            DataContext = new AzuriranjeProizvodaParentViewModel();
+            viewModel = new AzuriranjeProizvodaParentViewModel();
+            // DataContext = new AzuriranjeProizvodaParentViewModel();
             //MenadzerForm otvara dodavanjeProizvoda
             //stavila da se vidi back u slucaju da menadzer slucajno klikne pogresan button i sl.
             var currentView = SystemNavigationManager.GetForCurrentView();
@@ -44,5 +46,13 @@ namespace ProjekatMEDICA
                 e.Handled = true;
             }
         }
+        private void Proizvod_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                var proizvod = (e.AddedItems[0] as Proizvod);
+                if (proizvod != null) viewModel.odabrani = proizvod;
+            }
+        }
     }
 }
