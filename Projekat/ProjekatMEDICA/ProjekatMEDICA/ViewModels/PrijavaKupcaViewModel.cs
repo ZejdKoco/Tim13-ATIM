@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Popups;
+using Windows.UI.Xaml.Controls;
 
 namespace ProjekatMEDICA.ViewModels
 {
@@ -24,6 +25,7 @@ namespace ProjekatMEDICA.ViewModels
         public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
         public ICommand PotvrdiBtn { get => potvrdiBtn; set => potvrdiBtn = value; }
         public ICommand registrujSe { get; set; }
+        public PasswordBox pass { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
@@ -41,15 +43,23 @@ namespace ProjekatMEDICA.ViewModels
             registrujSe = new RelayCommand<object>(registr, mozeLi);
         }
 
+        
+
         private async void potvrdi(object obj)
         {
+           // var UnosPassBox = obj as PasswordBox;
+            //sifra = pass.Password;
             kupac = (OnlineKupac)DefaultPodaci.nadjiKupca(sifra, korisnickoIme);
             if (kupac == null)
             {
                 var dialog1 = new MessageDialog("Neispravni podaci!");
                 await dialog1.ShowAsync();
             }
-            else navigationService.Navigate(typeof(NarucivanjeProizvoda), new NarucivanjeProizvodaViewModel(this));
+            else
+            {
+                navigationService.Navigate(typeof(NarucivanjeProizvoda), new NarucivanjeProizvodaViewModel(this));
+            }
+
         }
 
         public bool mozeLi(object o)

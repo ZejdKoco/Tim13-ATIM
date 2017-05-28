@@ -1,4 +1,5 @@
-﻿using ProjekatMEDICA.Models;
+﻿using ProjekatMEDICA.Helper;
+using ProjekatMEDICA.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,59 +7,100 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace ProjekatMEDICA.ViewModels
 {
     class NarucivanjeProizvodaViewModel
     {
-        private PrijavaKupcaViewModel prijavaKupcaViewModel;
-
-        public ICommand racun { get; set; }
+        OnlineKupac kupac;
+        INavigationService navigationService;
         public ICommand kupi { get; set; }
-        public ICommand trazi { get; set; }
+        public string imePrezime { get; set; }
+        public ICommand odjava { get; set; }
+        public ICommand dostavaDa { get; set; }
+        public ICommand dostavaNe { get; set; }
+        public bool dostava { get; set; }
         public string pretraga { get; set; }
-        public ObservableCollection<Proizvod> proizvodi { get; set; } //koji ce se dodavati u listView
-
+        public ObservableCollection<Proizvod> proizvodii { get; set; } //koji ce se dodavati u listView
+        public Proizvod odabrani;
         public NarucivanjeProizvodaViewModel()
         {
-            racun = new RelayCommand<object>(prikaziRacun, jeLiMogucePrikazati);
-            trazi = new RelayCommand<object>(prikaziListView, jeLiMoguceLV);
+            navigationService = new NavigationService();
+            odjava = new RelayCommand<object>(odjaviSe);
             kupi = new RelayCommand<object>(kupiProizvod, jeLiMoguceKupiti);
+            proizvodii = new ObservableCollection<Proizvod>();
+            foreach (Proizvod p in DefaultPodaci._proizvodi) proizvodii.Add(p);
+            dostavaDa = new RelayCommand<Object>(dostavaFda);
+            dostavaNe = new RelayCommand<Object>(dostavaFne);
+            odabrani = proizvodii[0];
+        }
+
+        public void dostavaFda(Object o)
+        {
+            dostava = true;
+        }
+
+        public void dostavaFne(Object o)
+        {
+            dostava = false;
         }
 
         public NarucivanjeProizvodaViewModel(PrijavaKupcaViewModel prijavaKupcaViewModel) //treba kod prijave
         {
-            this.prijavaKupcaViewModel = prijavaKupcaViewModel;
+            kupac = (OnlineKupac)prijavaKupcaViewModel.Kupac;
+            navigationService = new NavigationService();
+            odjava = new RelayCommand<object>(odjaviSe);
+            kupi = new RelayCommand<object>(kupiProizvod, jeLiMoguceKupiti);
+            proizvodii = new ObservableCollection<Proizvod>();
+            foreach (Proizvod p in DefaultPodaci._proizvodi) proizvodii.Add(p);
+            odabrani = proizvodii[0];
+            imePrezime = kupac.Ime + " " + kupac.Prezime;
+
+            dostavaDa = new RelayCommand<Object>(dostavaFda);
+            dostavaNe = new RelayCommand<Object>(dostavaFne);
         }
 
-        public bool jeLiMogucePrikazati(Object o)
+        public void odjaviSe(Object o)
         {
-            return true;
+            navigationService.Navigate(typeof(FormOdabirUloge));
         }
 
-        public bool jeLiMoguceLV(Object o)
-        {
-            return true;
-        }
+  
 
         public bool jeLiMoguceKupiti(Object o)
         {
             return true;
         }
 
-        public void prikaziRacun(Object o)
-        {
-            //treba se povezati sa trenutnim ulogovanim kupcem i samo kao MessageBox.show prikazati stanje racuna
-        }
+        
 
-        public void prikaziListView(Object o)
+        public async void kupiProizvod(Object o)
         {
-            //
-        }
-
-        public void kupiProizvod(Object o)
-        {
-            //dodati proizvod na listu kupljenih proizvoda kupca i skinuti s liste dostupnih...
+            if (odabrani == null)
+            {
+                var dialog1 = new MessageDialog("Niste odabrali proizvod");
+                await dialog1.ShowAsync();
+            }
+            else
+            {
+                DefaultPodaci._proizvodi.Remove(odabrani);
+                ObservableCollection<Proizvod> pro = new ObservableCollection<Proizvod>();
+                pro.Add(odabrani);
+                kupac.KupljeniProizvodi.Add(new StavkaNarudzbe(DateTime.Now, pro , odabrani.Cijena));
+                proizvodii.Remove(odabrani);
+                if (!dostava)
+                {
+                    var dialog1 = new MessageDialog("Uspjesno ste kupili proizvod.");
+                    await dialog1.ShowAsync();
+                }
+                else
+                {
+                    DefaultPodaci._proizvodiZaDostaviti.Add(odabrani);
+                    var dialog1 = new MessageDialog("Proizvod ce biti dostavljen na vasu adresu.");
+                    await dialog1.ShowAsync();
+                }
+            }
         }
     }
 }

@@ -11,10 +11,10 @@
         <TextBlock x:Name="labelKorIme" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" Text="Korisničko ime :" VerticalAlignment="Top" Width="125" FlowDirection="RightToLeft"/>
         <TextBlock x:Name="labelSifra" HorizontalAlignment="Left" Margin="10,215,0,0" TextWrapping="Wrap" Text="Šifra :" VerticalAlignment="Top" Width="125" FlowDirection="RightToLeft"/>
         <TextBox Text ="{x:Bind viewModel.KorisnickoIme, Mode=TwoWay}" HorizontalAlignment="Left" Margin="152,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
-        <TextBox HorizontalAlignment="Left" Margin="152,210,0,0" TextWrapping="Wrap" Text="{x:Bind viewModel.Sifra, Mode=TwoWay}" VerticalAlignment="Top" Width="170"/>
         <Button Command="{x:Bind viewModel.PotvrdiBtn, Mode=TwoWay}" x:Name="buttonPrijava" Content="Prijava" HorizontalAlignment="Left" Margin="114,281,0,0" VerticalAlignment="Top" Width="120"/>
         <FlipView HorizontalAlignment="Left" Height="100" Margin="-756,145,0,0" VerticalAlignment="Top" Width="100"/>
         <Button Content="Registruj se" Command="{x:Bind viewModel.registrujSe, Mode=TwoWay}" HorizontalAlignment="Left" Margin="117,336,0,0" VerticalAlignment="Top" Width="117"/>
+        <PasswordBox HorizontalAlignment="Left" Password="{x:Bind viewModel.Sifra, Mode=TwoWay}" Margin="152,215,0,0" VerticalAlignment="Top" Width="170"/>
 
     </Grid>
 </Page>

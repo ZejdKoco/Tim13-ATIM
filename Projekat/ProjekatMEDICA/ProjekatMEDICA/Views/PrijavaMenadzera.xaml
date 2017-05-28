@@ -11,18 +11,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <RelativePanel>
+        <RelativePanel Margin="0,165,0,-165">
             <TextBlock Name="Username" Text="Korisnicko ime:"
                        FontSize="18" FontWeight="Normal"
                        Margin="15,30,10,10"></TextBlock>
-            <TextBox MinWidth="200"
-                     Text="{x:Bind viewModel.korisnickoIme, Mode=TwoWay}"
-                     RelativePanel.RightOf="Username"
-                     Margin="0,30,10.333,10" HorizontalAlignment="Right" Width="200"></TextBox>
             <Button Name="Prijava" Content="Prijava"
                     Command="{x:Bind viewModel.PotvrdiBtn}"
                     FontSize="18" FontWeight="Normal"
                     Margin="280,100,20,10"></Button>
+            <PasswordBox HorizontalAlignment="Left" Password="{x:Bind viewModel.korisnickoIme, Mode=TwoWay}" Height="32" VerticalAlignment="Top" Width="205" Margin="145,25,-286,-25"/>
         </RelativePanel>
     </Grid>
 

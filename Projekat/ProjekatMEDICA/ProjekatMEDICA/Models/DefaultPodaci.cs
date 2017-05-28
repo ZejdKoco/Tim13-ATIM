@@ -40,6 +40,11 @@ namespace ProjekatMEDICA.Models
             }
         };
 
+        public static List<Proizvod> _proizvodiZaDostaviti = new List<Proizvod>()
+        {
+            new Proizvod("Dostaviti", "4", "Proizvodjac", "Opis", 2.5, 3, "kOMENTAR")
+        };
+
         public static List<Kupac> _nepotvrdjeniKupci = new List<Kupac>()
         {
             new OnlineKupac()
@@ -69,6 +74,8 @@ namespace ProjekatMEDICA.Models
         public DefaultPodaci()
         {
         }
+
+
 
         public static IList<Uposlenik> dajSveUposlenike()
         {

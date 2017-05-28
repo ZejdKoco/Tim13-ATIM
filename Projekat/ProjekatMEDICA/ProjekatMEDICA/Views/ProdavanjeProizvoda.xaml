@@ -17,7 +17,7 @@
         <RadioButton x:Name="radioDA" Command="{Binding Path=imaKarticu, Mode=TwoWay}" Content="DA" HorizontalAlignment="Left" Margin="132,252,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="radioNE" Command="{Binding Path=nemaKarticu, Mode=TwoWay}" Content="NE" HorizontalAlignment="Left" Margin="210,252,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="135,115,0,0"
-                  VerticalAlignment="Top" ItemsSource="{Binding Path=kupcii}" 
+                  VerticalAlignment="Top" ItemsSource="{Binding Path=proizvodii}" 
                   DisplayMemberPath="Naziv" SelectedValue="{Binding Path=odabraniKupac, Mode=TwoWay}"
                   Width="150"  Grid.Row="1" Grid.Column ="1"
                   ></ComboBox>
