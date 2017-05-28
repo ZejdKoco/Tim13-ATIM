@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class AzuriranjeUposlenika : Page
     {
+        AzuriranjeUposlenikaViewModel viewModel;
         public AzuriranjeUposlenika()
         {
             this.InitializeComponent();
@@ -31,6 +33,7 @@ namespace ProjekatMEDICA
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            
         }
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
@@ -49,6 +52,10 @@ namespace ProjekatMEDICA
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            viewModel = (AzuriranjeUposlenikaViewModel)e.Parameter;
         }
     }
 }

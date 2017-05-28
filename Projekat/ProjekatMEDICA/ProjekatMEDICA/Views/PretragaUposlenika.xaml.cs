@@ -1,4 +1,5 @@
-﻿using ProjekatMEDICA.ViewModels;
+﻿using ProjekatMEDICA.Models;
+using ProjekatMEDICA.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,9 +26,8 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class PretragaUposlenika : Page
     {
-        
-        public ICommand pretragaBtn { get; set; }
-        public ICommand potvrdiBtn { get; set; }
+
+        PretragaUposlenikaViewModel viewModel;
         public PretragaUposlenika()
         {
             this.InitializeComponent();
@@ -35,6 +35,7 @@ namespace ProjekatMEDICA
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            viewModel = new PretragaUposlenikaViewModel();
         }
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
@@ -42,6 +43,14 @@ namespace ProjekatMEDICA
             {
                 Frame.GoBack();
                 e.Handled = true;
+            }
+        }
+        private void Uposlenik_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                var uposlenik = (e.AddedItems[0] as Uposlenik);
+                if (uposlenik != null) viewModel.odabrani = uposlenik;
             }
         }
     }

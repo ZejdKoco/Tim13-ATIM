@@ -119,9 +119,29 @@ namespace ProjekatMEDICA.Models
         {
             return _kupci.Where(u => u.Username.Equals(username)).FirstOrDefault();
         }
-        public static Uposlenik nadjiUposlenika(string username)
+        public static Uposlenik nadjiUposlenika(string prezime)
         {
-            return _uposlenici.Where(u => u._prezime.Equals(username)).FirstOrDefault();
+            return _uposlenici.Where(u => u._prezime.Equals(prezime)).FirstOrDefault();
+        }
+        public static Uposlenik nadjiUposlenika(string ime, string prezime, DateTime datumRodj, DateTime datumZapo)
+        {
+            return _uposlenici.Where(u => u._ime.Equals(ime) && u._prezime.Equals(prezime) && u._datumRodjenja.Equals(datumRodj) && u._datumZaposlenja.Equals(datumZapo)).FirstOrDefault();
+        }
+        public static void AzurirajUposlenika(Uposlenik original, Uposlenik novi)
+        {
+            foreach(var x in _uposlenici)
+            {
+                if(x._ime == original._ime && x._prezime == original._prezime && x._datumRodjenja == original._datumRodjenja && x._datumZaposlenja == original._datumZaposlenja)
+                {
+                    x._ime = novi._ime;
+                    x._prezime = novi._prezime;
+                    x.username = novi.username;
+                    x.password = novi.password;
+                    x._datumRodjenja = novi._datumRodjenja;
+                    x._datumZaposlenja = novi._datumZaposlenja;
+                }
+            }
+
         }
     }
 

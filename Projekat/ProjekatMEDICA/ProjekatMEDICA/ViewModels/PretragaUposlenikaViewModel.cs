@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace ProjekatMEDICA.ViewModels
 {
@@ -15,6 +16,7 @@ namespace ProjekatMEDICA.ViewModels
     {
         public string imePrezimeID { get; set; }
         public ICommand pretragaBtn { get; set; }
+        public Uposlenik odabrani;
         public ObservableCollection<Uposlenik> uposlenici { get; set; }
         public ICommand potvrdiBtn { get; set; }
         public INavigationService NavigationService { get; set; }
@@ -29,24 +31,40 @@ namespace ProjekatMEDICA.ViewModels
         public PretragaUposlenikaViewModel()
         {
             NavigationService = new NavigationService();
-            pretragaBtn = new RelayCommand<object>(pretragaF, mozePretraga);
-            potvrdiBtn = new RelayCommand<object>(potvrdiF, mozePotvrda);
+            potvrdiBtn = new RelayCommand<object>(azurirajAsync);
+            pretragaBtn = new RelayCommand<object>(pretraga);
+            uposlenici = new ObservableCollection<Uposlenik>();
+            Uposlenici();
         }
-        public bool mozePretraga(Object parameter)
+        private void pretraga(object obj)
         {
-            return true;
+            Uposlenik p = DefaultPodaci.nadjiUposlenika(imePrezimeID);
+            if (p != null)
+            {
+                uposlenici.Clear();
+                uposlenici.Add(p);
+            }
         }
-        public bool mozePotvrda(Object parameter)
+        public void Uposlenici()
         {
-            return true;
+            foreach (Uposlenik p in DefaultPodaci._uposlenici)
+            {
+                uposlenici.Add(new Uposlenik(p._ime, p._prezime, p._id, p._datumRodjenja, p._datumZaposlenja));
+            }
         }
-        public void pretragaF(Object parameter)
+        public async void azurirajAsync(object o)
         {
-            //dodavanje u listu
+            if (odabrani == null)
+            {
+                var dialog1 = new MessageDialog("Niste odabrali proizvod");
+                await dialog1.ShowAsync();
+            }
+            else
+            {
+
+                NavigationService.Navigate(typeof(AzuriranjeUposlenika), new AzuriranjeUposlenikaViewModel(this));
+            }
         }
-        public void potvrdiF(Object parameter)
-        {
-            NavigationService.Navigate(typeof(AzuriranjeUposlenika));
-        }
+
     }
 }

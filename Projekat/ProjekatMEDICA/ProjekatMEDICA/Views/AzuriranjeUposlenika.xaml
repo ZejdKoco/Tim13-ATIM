@@ -15,25 +15,18 @@
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,-10">
             <TextBlock HorizontalAlignment="Left" Margin="21,23,0,0" TextWrapping="Wrap" Text="Azuriranje Uposlenika" VerticalAlignment="Top" FontSize="30"/>
             <TextBlock HorizontalAlignment="Left" Margin="21,92,0,0" TextWrapping="Wrap" Text="Ime" VerticalAlignment="Top" Height="32"/>
-            <TextBox x:Name="textBoxImeAz" Text="{Binding Path=ime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="159,92,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296"/>
-            <TextBox x:Name="textBoxPrezimeAz" Text="{Binding Path=prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="159,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
+            <TextBox x:Name="textBoxImeAz" Text="{x:Bind viewModel.ime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="159,92,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296"/>
+            <TextBox x:Name="textBoxPrezimeAz" Text="{x:Bind viewModel.prezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="159,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
             <TextBlock HorizontalAlignment="Left" Margin="21,157,0,0" TextWrapping="Wrap" Text="Prezime" VerticalAlignment="Top" Height="32"/>
             <TextBlock HorizontalAlignment="Left" Margin="21,226,0,0" TextWrapping="Wrap" Text="Datum Rodjenja" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged" Height="30"/>
-            <DatePicker x:Name="datePickerDatumAz" Date="{Binding Path=datumRodjenja, Converter={StaticResource theDateConverter}}" HorizontalAlignment="Left" Margin="159,224,0,0" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="21,287,0,0" TextWrapping="Wrap" Text="JMBG" VerticalAlignment="Top" Height="32"/>
-            <TextBox x:Name="textBoxJMBGaz" Text="{Binding Path=maticni, Mode=TwoWay}" HorizontalAlignment="Left" Margin="159,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" InputScope="Digits"/>
-            <TextBlock HorizontalAlignment="Left" Margin="21,353,0,0" TextWrapping="Wrap" Text="Strucna Sprema" VerticalAlignment="Top" Height="32"/>
-            <ComboBox x:Name="comboBoxStrucnaSpremaAz" SelectedValue="{Binding Path=strucnSprema, Mode=TwoWay}" HorizontalAlignment="Left" Margin="159,353,0,0" VerticalAlignment="Top" Width="296">
-                <x:String>VSS</x:String>
-                <x:String>Osnovna Skola</x:String>
-                <x:String>Magistar</x:String>
-            </ComboBox>
-            <TextBlock HorizontalAlignment="Left" Margin="21,421,0,0" TextWrapping="Wrap" Text="Spol" VerticalAlignment="Top" Height="26"/>
-            <RadioButton x:Name="radioButtonMuskoAz" Command="{Binding Path=muskoJe}" Content="Musko" HorizontalAlignment="Left" Margin="159,415,0,0" VerticalAlignment="Top"/>
-            <RadioButton Content="Zensko" Command="{Binding Path=zenskoJe}" x:Name="radioButtonZenskoAz" HorizontalAlignment="Left" Margin="335,415,0,0" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="21,477,0,0" TextWrapping="Wrap" Text="Komentar" VerticalAlignment="Top" Height="32"/>
-            <TextBox x:Name="textBoxKomentar" Text="{Binding Path=komentar}" HorizontalAlignment="Left" Margin="159,477,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="103" Width="296" TextChanged="textBoxKomentar_TextChanged"/>
-            <Button x:Name="buttonSpasi" Content="Spremi" Command="{Binding Path=viewModel.azurirajBtn}" HorizontalAlignment="Left" Margin="335,618,0,0" VerticalAlignment="Top" Width="120"/>
+            <DatePicker x:Name="datePickerDatumAz" Date="{x:Bind viewModel.datumRodjenja, Converter={StaticResource theDateConverter}, Mode=TwoWay}" HorizontalAlignment="Left" Margin="159,224,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="buttonSpasi" Content="Spremi" Command="{x:Bind viewModel.azurirajBtn, Mode=TwoWay}" HorizontalAlignment="Left" Margin="335,590,0,0" VerticalAlignment="Top" Width="120"/>
+            <DatePicker HorizontalAlignment="Left" Date="{x:Bind viewModel.datumZaposlenja, Converter={StaticResource theDateConverter}, Mode=TwoWay}" Margin="159,282,0,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="21,284,0,0" TextWrapping="Wrap" Text="Datum Zaposlenja" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Text="{x:Bind viewModel.username, Mode=TwoWay}" Margin="159,337,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296"/>
+            <TextBox HorizontalAlignment="Left" Text="{x:Bind viewModel.password, Mode=TwoWay}" Margin="159,396,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296"/>
+            <TextBlock HorizontalAlignment="Left" Margin="21,343,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="21,402,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
 
 
         </Grid>
