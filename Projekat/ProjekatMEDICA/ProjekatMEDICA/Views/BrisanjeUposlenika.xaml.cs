@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjekatMEDICA.Models;
+using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,6 +25,7 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class BrisanjeUposlenika : Page
     {
+        BrisanjeUposlenikaViewModel viewModel;
         public BrisanjeUposlenika()
         {
             this.InitializeComponent();
@@ -31,6 +34,8 @@ namespace ProjekatMEDICA
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            //DataContext = new BrisanjeKupcaViewModel();
+            viewModel = new BrisanjeUposlenikaViewModel();
         }
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
@@ -39,6 +44,14 @@ namespace ProjekatMEDICA
             {
                 Frame.GoBack();
                 e.Handled = true;
+            }
+        }
+        private void Uposlenik_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                var uposlenik = (e.AddedItems[0] as Uposlenik);
+                if (uposlenik != null) viewModel.odabrani = uposlenik;
             }
         }
     }

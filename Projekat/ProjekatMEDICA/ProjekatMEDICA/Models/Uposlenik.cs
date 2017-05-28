@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjekatMEDICA.Models
 {
-    public abstract class Uposlenik
+    public class Uposlenik
     {
         public string _ime { get; set; }
         public virtual string uloga { get; set; }
