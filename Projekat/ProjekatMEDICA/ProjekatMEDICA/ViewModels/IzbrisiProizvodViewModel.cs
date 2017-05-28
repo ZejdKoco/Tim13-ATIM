@@ -66,21 +66,24 @@ namespace ProjekatMEDICA.ViewModels
 
         private async void izbrisi(object obj)
         {
-            if (Odabrani != null)
+            if (DefaultPodaci._proizvodi.Count() > 0)
             {
-                for (int i = 0; i < DefaultPodaci._proizvodi.Count(); i++)
+                if (Odabrani != null)
                 {
-                    if(DefaultPodaci._proizvodi[i].Id == Odabrani.Id)
+                    for (int i = 0; i < DefaultPodaci._proizvodi.Count(); i++)
                     {
-                        DefaultPodaci._proizvodi.RemoveAt(i);
-                        break;
+                        if (DefaultPodaci._proizvodi[i].Id == Odabrani.Id)
+                        {
+                            DefaultPodaci._proizvodi.RemoveAt(i);
+                            break;
+                        }
                     }
+                    var dialog1 = new MessageDialog("Uspjesno izbrisan proizvod");
+                    await dialog1.ShowAsync();
+                    Naziv = "";
+                    proizvodi.Clear();
+                    Proizvodi();
                 }
-                var dialog1 = new MessageDialog("Uspjesno izbrisan proizvod");
-                await dialog1.ShowAsync();
-                Naziv = "";
-                proizvodi.Clear();
-                Proizvodi();
             }
         }
 
