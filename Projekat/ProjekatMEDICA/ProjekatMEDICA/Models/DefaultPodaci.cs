@@ -115,6 +115,10 @@ namespace ProjekatMEDICA.Models
         {
             return _kupci.Where(u => u.Username.Equals(username) && u.Password.Equals(password)).FirstOrDefault();
         }
+        public static OnlineKupac nadjiKupca(string username)
+        {
+            return _kupci.Where(u => u.Username.Equals(username)).FirstOrDefault();
+        }
         public static Uposlenik nadjiUposlenika(string username)
         {
             return _uposlenici.Where(u => u._prezime.Equals(username)).FirstOrDefault();

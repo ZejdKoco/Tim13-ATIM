@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjekatMEDICA.Models;
+using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,6 +25,7 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class BrisanjeKupca : Page
     {
+        BrisanjeKupcaViewModel viewModel;
         public BrisanjeKupca()
         {
             this.InitializeComponent();
@@ -31,6 +34,7 @@ namespace ProjekatMEDICA
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            viewModel = new BrisanjeKupcaViewModel();
         }
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
@@ -45,6 +49,14 @@ namespace ProjekatMEDICA
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void Kupac_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                var kupac = (e.AddedItems[0] as OnlineKupac);
+                if (kupac != null) viewModel.odabrani = kupac;
+            }
         }
     }
 }
