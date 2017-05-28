@@ -19,7 +19,6 @@ namespace ProjekatMEDICA.ViewModels
         public string prezime { get; set; }
         public DateTime datumRodjenja { get; set; }
         public DateTime datumZaposlenja { get; set; }
-        public string maticni { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public bool prodavacJe { get; set; }
@@ -32,10 +31,11 @@ namespace ProjekatMEDICA.ViewModels
         public Dostavljac dostavljacClass;
         private INavigationService NavigationService;
         public event PropertyChangedEventHandler PropertyChanged;
+        
         public DodavanjeUposlenikaViewModel()
         {
             NavigationService = new NavigationService();
-            regBtn = new RelayCommand<object>(potvrdiDodavanje);
+            regBtn = new RelayCommand<object>(potvrdiDodavanjeAsync);
             prodavac = new RelayCommand<object>(potvrdiProdavacJe);
             dostavljac = new RelayCommand<object>(potvrdiDostavljacJe);
         }
@@ -56,7 +56,6 @@ namespace ProjekatMEDICA.ViewModels
         public void potvrdiDostavljacJe(object parametar)
         {
             int id = 1;
-            dostavljacClass = new Dostavljac(ime, prezime, id, username, password, datumRodjenja, datumZaposlenja);
             dostavljacJe = true;
             prodavacJe = false;
         }
@@ -64,12 +63,27 @@ namespace ProjekatMEDICA.ViewModels
         {
             unosUposlenika.Navigate(typeof(DodavanjeUposlenika));
         }
-        public void potvrdiDodavanje(object parametar)
+        public async void potvrdiDodavanjeAsync(object parametar)
         {
-            /*Spasavanje unesenih postavki u defaultnipodaci._uposlenici*/
-            if (prodavacJe) DefaultPodaci._uposlenici.Add(prodavacClass);
-            if (dostavljacJe) DefaultPodaci._uposlenici.Add(dostavljacClass);
-            //NavigationService.Navigate(typeof(MenadzerForm));
+
+
+        bool greska = false;
+        int id = 1;
+            if (ime == null || ime == "") greska = true;
+            if (prezime == null || prezime == "") greska = true;
+            if (username == null || username == "") greska = true;
+            if (password == null || password == "") greska = true;
+            if (greska)
+            {
+                var dialog1 = new MessageDialog("Neispravni podaci");
+                await dialog1.ShowAsync();
+
+            }
+            else
+            {
+                if (prodavacJe) { prodavacClass = new Prodavac(ime, prezime, id, username, password, datumRodjenja, datumZaposlenja); DefaultPodaci._uposlenici.Add(prodavacClass);}
+                if (dostavljacJe) { dostavljacClass = new Dostavljac(ime, prezime, id, username, password, datumRodjenja, datumZaposlenja); DefaultPodaci._uposlenici.Add(dostavljacClass); }
+            }
         }
 
     }

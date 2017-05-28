@@ -26,7 +26,7 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class DodavanjeUposlenika : Page
     {
-        
+        DodavanjeUposlenikaViewModel viewModel;
         public DodavanjeUposlenika()
         {
             this.InitializeComponent();
@@ -54,7 +54,7 @@ namespace ProjekatMEDICA
 
         private void buttonUnesi_Click(object sender, RoutedEventArgs e)
         {
-            text.Text = DefaultPodaci._uposlenici.Count.ToString();
+            probni.Text = DefaultPodaci._uposlenici.Count.ToString();
         }
     }
 }
