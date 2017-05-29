@@ -25,5 +25,10 @@ namespace ProjekatMEDICA.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+        public DostavaProizvodaViewModel(PrijavaDostavljacaViewModel p)
+        {
+
+        }
     }
 }

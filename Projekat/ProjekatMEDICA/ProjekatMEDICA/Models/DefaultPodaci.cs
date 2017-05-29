@@ -106,6 +106,13 @@ namespace ProjekatMEDICA.Models
         {
             return _uposlenici.Where(u => u.username.Equals(username) && u.password.Equals(password) && u.uloga.Equals("Prodavac")).FirstOrDefault();
         }
+
+
+        public static Uposlenik nadjiDostavljaca(string user, string pw)
+        {
+            return _uposlenici.Where(u => u.username.Equals(user) && u.password.Equals(pw) && u.uloga.Equals("Dostavljac")).FirstOrDefault();
+        }
+        
         public static Proizvod nadjiProizvod(string id)
         {
             return _proizvodi.Where(i => i.Naziv.Equals(id) || i.Id.Equals(id)).FirstOrDefault();
@@ -115,6 +122,8 @@ namespace ProjekatMEDICA.Models
         {
             return _kupci.Where(u => u.Username.Equals(username) && u.Password.Equals(password)).FirstOrDefault();
         }
+
+
         public static OnlineKupac nadjiKupca(string username)
         {
             return _kupci.Where(u => u.Username.Equals(username)).FirstOrDefault();
@@ -127,6 +136,8 @@ namespace ProjekatMEDICA.Models
         {
             return _uposlenici.Where(u => u._ime.Equals(ime) && u._prezime.Equals(prezime) && u._datumRodjenja.Equals(datumRodj) && u._datumZaposlenja.Equals(datumZapo)).FirstOrDefault();
         }
+
+
         public static void AzurirajUposlenika(Uposlenik original, Uposlenik novi)
         {
             foreach(var x in _uposlenici)

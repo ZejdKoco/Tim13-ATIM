@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,9 +24,11 @@ namespace ProjekatMEDICA.Views
     /// </summary>
     public sealed partial class PrijavaDostavljaca : Page
     {
+        PrijavaDostavljacaViewModel viewModel;
         public PrijavaDostavljaca()
         {
             this.InitializeComponent();
+            viewModel = new PrijavaDostavljacaViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;

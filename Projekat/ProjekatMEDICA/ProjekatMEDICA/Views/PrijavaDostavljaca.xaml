@@ -10,10 +10,11 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock HorizontalAlignment="Left" Margin="40,199,0,0" TextWrapping="Wrap" Text="Username :" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,249,0,0" TextWrapping="Wrap" Text="Password :" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="124,194,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="169"/>
-        <TextBox HorizontalAlignment="Left" Margin="124,244,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="169"/>
-        <Button Content="Prijavi se" HorizontalAlignment="Left" Margin="129,311,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="124,194,0,0" TextWrapping="Wrap" Text="{x:Bind viewModel.username,Mode=TwoWay}" VerticalAlignment="Top" Width="169"/>
+        
+        <Button Content="Prijavi se" Command="{x:Bind viewModel.prijavaBtn}" HorizontalAlignment="Left" Margin="129,311,0,0" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="69,119,0,0" TextWrapping="Wrap" Text="Prijava dostavljaca" VerticalAlignment="Top" FontSize="25"/>
+        <PasswordBox HorizontalAlignment="Left" Password="{x:Bind viewModel.password, Mode=TwoWay}" Margin="124,244,0,0" VerticalAlignment="Top" Width="169"/>
 
     </Grid>
 </Page>

@@ -54,7 +54,7 @@ namespace ProjekatMEDICA.ViewModels
         }
         public void loginDostavljacF(Object parameter)
         {
-            NavigationService.Navigate(typeof(PrijavaMenadzera)); //dodatno pitati za prijavu dostavljaca
+            NavigationService.Navigate(typeof(PrijavaDostavljaca)); //dodatno pitati za prijavu dostavljaca
         }
     }
     

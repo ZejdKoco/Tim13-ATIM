@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace ProjekatMEDICA.ViewModels
 {
@@ -23,9 +24,18 @@ namespace ProjekatMEDICA.ViewModels
             prijavaBtn = new RelayCommand<object>(prijavaDostavljaca);
             navigationService = new NavigationService();
         }
-        public void prijavaDostavljaca(object parameter)
+        public async void prijavaDostavljaca(object parameter)
         {
-          // navigationService.Navigate(typeof(PrijavaDostavljaca), new DostavaProizvodaViewModel(this));
+             dostavljac= (Dostavljac)DefaultPodaci.nadjiDostavljaca(username, password);
+            if (dostavljac==null)
+            {
+                var dialog1 = new MessageDialog("Neispravni podaci!");
+                await dialog1.ShowAsync();
+            }
+            else
+            {
+                navigationService.Navigate(typeof(DostavaProizvoda), new DostavaProizvodaViewModel(this));
+            }
         }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
