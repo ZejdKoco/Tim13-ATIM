@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjekatMEDICA.Models;
+using ProjekatMEDICA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,25 @@ namespace ProjekatMEDICA
     /// </summary>
     public sealed partial class DostavaProizvoda : Page
     {
+        DostavaProizvodaViewModel viewModel;
         public DostavaProizvoda()
         {
             this.InitializeComponent();
+            viewModel = new DostavaProizvodaViewModel();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            viewModel = (DostavaProizvodaViewModel)e.Parameter;
+        }
+
+        private void Proizvod_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                var proizvod = (e.AddedItems[0] as Proizvod);
+                if (proizvod != null) viewModel.odabrani = proizvod;
+            }
         }
     }
 }
