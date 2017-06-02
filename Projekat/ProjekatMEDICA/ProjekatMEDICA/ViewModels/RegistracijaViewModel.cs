@@ -34,13 +34,19 @@ namespace ProjekatMEDICA.ViewModels
         public ICommand muskoJe { get; set; }
         public ICommand zenskoJe { get; set; }
         public ICommand regBtn { get; set; }
-
+        public ICommand izadji { get; set; }
         public RegistracijaViewModel()
         {
             navigationService = new NavigationService();
             regBtn = new RelayCommand<Object>(registrujSe, mozeLi);
             muskoJe = new RelayCommand<Object>(musko);
             zenskoJe = new RelayCommand<Object>(zensko);
+            izadji = new RelayCommand<Object>(izadjif);
+        }
+
+        public void izadjif(Object o)
+        {
+            navigationService.Navigate(typeof(FormOdabirUloge));
         }
 
         public void musko(Object o)
@@ -100,7 +106,7 @@ namespace ProjekatMEDICA.ViewModels
 
                     int br = DefaultPodaci._nepotvrdjeniKupci.Count;
 
-                    var dialog = new MessageDialog(br.ToString());
+                    var dialog = new MessageDialog("Uspjesno ste se registrovali. Cekajte potvrdu menadzera.");
                     await dialog.ShowAsync();
                 }
                 else

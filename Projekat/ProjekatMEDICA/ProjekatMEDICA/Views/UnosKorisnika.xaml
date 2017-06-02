@@ -8,11 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Odobri" Command="{Binding Path=odobri}" HorizontalAlignment="Left" Margin="135,545,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="58,97,0,0" VerticalAlignment="Top" Width="245" Height="28"
+        <Button Content="Odobri" Command="{Binding Path=odobri}" HorizontalAlignment="Left" Margin="80,413,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="58,266,0,0" VerticalAlignment="Top" Width="245" Height="28"
                   ItemsSource="{Binding Path=kupcii, Mode=TwoWay}" 
-                  DisplayMemberPath="Ime" SelectedValue="{Binding Path=odabraniKupac, Mode=TwoWay}" Grid.Row="1" Grid.Column ="1"
+                  DisplayMemberPath="Ime" SelectedValue="{Binding Path=odabraniKupac, Mode=TwoWay}"
                   />
+        <TextBlock HorizontalAlignment="Left" Margin="70,45,0,0" TextWrapping="Wrap" Text="Nepotvrdjene " VerticalAlignment="Top" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Margin="95,100,0,0" TextWrapping="Wrap" Text="registracije" VerticalAlignment="Top" FontSize="36"/>
+        <Button Content="Izadji" Command="{Binding izadji}" HorizontalAlignment="Left" Margin="185,413,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

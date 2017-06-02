@@ -28,7 +28,6 @@
         <TextBox HorizontalAlignment="Left" Text="{Binding Path=password, Mode=TwoWay}" Margin="159,318,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296"/>
         <DatePicker HorizontalAlignment="Left" Date="{Binding Path=datumZaposlenja, Converter={StaticResource theDateConverter}, Mode=TwoWay}" Margin="159,236,0,0" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="24,238,0,0" TextWrapping="Wrap" Text="DatumZaposlenja" VerticalAlignment="Top"/>
-        <TextBlock x:Name="probni" HorizontalAlignment="Left" Margin="159,406,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
 
 
     </Grid>

@@ -83,6 +83,8 @@ namespace ProjekatMEDICA.ViewModels
             {
                 if (prodavacJe) { prodavacClass = new Prodavac(ime, prezime, id, username, password, datumRodjenja, datumZaposlenja); DefaultPodaci._uposlenici.Add(prodavacClass);}
                 if (dostavljacJe) { dostavljacClass = new Dostavljac(ime, prezime, id, username, password, datumRodjenja, datumZaposlenja); DefaultPodaci._uposlenici.Add(dostavljacClass); }
+                var dialog1 = new MessageDialog("Uposlenik uspjesno dodan");
+                await dialog1.ShowAsync();
             }
         }
 

@@ -30,7 +30,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="textImePrezime" Text="{x:Bind viewModel.imePrezime, Mode=TwoWay}" HorizontalAlignment="Left" Margin="40,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FlowDirection="RightToLeft"/>
-        <ListView Name="Lista" Margin="57,133,53,208" Width="250"
+        <ListView Name="Lista" Margin="57,133,53,233" Width="250"
                       ItemTemplate="{StaticResource ProizvodListItem}"
                       IsItemClickEnabled="True"
                       ItemsSource="{x:Bind viewModel.proizvodii}"
@@ -64,11 +64,11 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Button Content="Kupi" Command="{x:Bind viewModel.kupi, Mode=TwoWay}" HorizontalAlignment="Left" Margin="130,585,0,0" VerticalAlignment="Top" Width="78"/>
+        <Button Content="Kupi" Command="{x:Bind viewModel.kupi, Mode=TwoWay}" HorizontalAlignment="Left" Margin="130,495,0,0" VerticalAlignment="Top" Width="78"/>
         <Button Content="Odjavi se" Command="{x:Bind viewModel.odjava, Mode=TwoWay}" HorizontalAlignment="Left" Margin="253,25,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="53,490,0,0" TextWrapping="Wrap" Text="Dostava :" VerticalAlignment="Top"/>
-        <RadioButton Content="DA" Command="{x:Bind viewModel.dostavaDa, Mode=TwoWay}" HorizontalAlignment="Left" Margin="130,485,0,0" VerticalAlignment="Top" />
-        <RadioButton Content="NE" Command="{x:Bind viewModel.dostavaNe, Mode=TwoWay}" HorizontalAlignment="Left" Margin="207,487,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="53,430,0,0" TextWrapping="Wrap" Text="Dostava :" VerticalAlignment="Top"/>
+        <RadioButton Content="DA" Command="{x:Bind viewModel.dostavaDa, Mode=TwoWay}" HorizontalAlignment="Left" Margin="130,425,0,0" VerticalAlignment="Top" />
+        <RadioButton Content="NE" Command="{x:Bind viewModel.dostavaNe, Mode=TwoWay}" HorizontalAlignment="Left" Margin="207,427,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

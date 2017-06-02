@@ -54,7 +54,7 @@ namespace ProjekatMEDICA
 
         private void buttonUnesi_Click(object sender, RoutedEventArgs e)
         {
-            probni.Text = DefaultPodaci._uposlenici.Count.ToString();
+
         }
     }
 }

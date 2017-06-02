@@ -101,7 +101,7 @@ namespace ProjekatMEDICA.ViewModels
                 else
                 {
                     string[] razdvoji = null;
-                    if (kupac != null || kupac.Length!=0 ) razdvoji=kupac.Split(' ');
+                    if (kupac != null && kupac.Length!=0 ) razdvoji=kupac.Split(' ');
                     if (razdvoji.Length < 2 || razdvoji==null)
                     {
                         var dialog1 = new MessageDialog("Unesite puno ime i prezime kupca");
@@ -152,8 +152,8 @@ namespace ProjekatMEDICA.ViewModels
 
         public async void listaProdanih(Object o)
         {
-            prodavac.dodajProdaniProizvod(DefaultPodaci._proizvodi[0]); //probno
-            prodavac.dodajProdaniProizvod(DefaultPodaci._proizvodi[0]); //probno
+            /*prodavac.dodajProdaniProizvod(DefaultPodaci._proizvodi[0]); //probno
+            prodavac.dodajProdaniProizvod(DefaultPodaci._proizvodi[0]); //probno*/
             String s = "";
             foreach(Proizvod p in prodavac.dajProdaneProizvode())
             {

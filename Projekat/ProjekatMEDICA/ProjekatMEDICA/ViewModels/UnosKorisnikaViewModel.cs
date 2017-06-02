@@ -1,4 +1,5 @@
-﻿using ProjekatMEDICA.Models;
+﻿using ProjekatMEDICA.Helper;
+using ProjekatMEDICA.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,15 +14,24 @@ namespace ProjekatMEDICA.ViewModels
     class UnosKorisnikaViewModel
     {
         public ICommand odobri { get; set; }
+        public ICommand izadji { get; set; }
         public ObservableCollection<OnlineKupac> kupcii { get; set; }
         public OnlineKupac odabraniKupac { get; set; }
+        INavigationService navigationService;
 
         public UnosKorisnikaViewModel()
         {
+            navigationService = new NavigationService();
             odobri = new RelayCommand<object>(odobrifja, mozeSeOdobriti);
+            izadji = new RelayCommand<object>(izadjif);
             kupcii = new ObservableCollection<OnlineKupac>();
             foreach (OnlineKupac k in DefaultPodaci._nepotvrdjeniKupci) kupcii.Add(k);
             if (kupcii.Count>0) odabraniKupac = kupcii[0];
+        }
+
+        public void izadjif(object o)
+        {
+            navigationService.Navigate(typeof(FormOdabirUloge));
         }
 
         public bool mozeSeOdobriti(Object o)
